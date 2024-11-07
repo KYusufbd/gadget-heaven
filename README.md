@@ -4,7 +4,7 @@
 # Project planning (Will be deleted when the page is ready.):
 ## Primary setup
 
-Github Repo **Okay**
+Github repo **Okay**
 React setup **Okay**
 Tailwind setup
 DaisyUI setup
