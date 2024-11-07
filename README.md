@@ -2,14 +2,15 @@
 
 
 # Project planning (Will be deleted when the page is ready.):
-## Primary setup
 
+## Primary setup
 Github repo **Okay**
 React setup **Okay**
-Tailwind setup
-DaisyUI setup
+Tailwind setup **Okay**
+DaisyUI setup **Okay**
 
-## Crate data
+## Crate data **Okay**
+
 ## Create layouts
 ## Add functionalities
 ## Write project details in README.md
