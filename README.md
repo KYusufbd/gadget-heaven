@@ -4,14 +4,17 @@
 # Project planning (Will be deleted when the page is ready.):
 
 ## Primary setup
-Github repo **Okay**
-React setup **Okay**
-Tailwind setup **Okay**
-DaisyUI setup **Okay**
+* Github repo **Okay**
+* React setup **Okay**
+* Tailwind setup **Okay**
+* DaisyUI setup **Okay**
 
 ## Crate data **Okay**
 
-## Create layouts
+## Create layout
+### Header
+* Navbar
+* Hero area
 ## Add functionalities
 ## Write project details in README.md
 ## Live Site
