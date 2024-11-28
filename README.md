@@ -14,6 +14,7 @@
 ## Create layout
 ### Header
 * Navbar
+** Use react router
 * Hero area
 ## Add functionalities
 ## Write project details in README.md
