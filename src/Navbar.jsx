@@ -21,7 +21,7 @@ const Navbar = () => {
                             d="M4 6h16M4 12h8m-8 6h16" />
                         </svg>
                     </div>
-                    <ul className="font-medium menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-full p-2 shadow">
+                    <ul className="font-medium menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                         <li><NavLink to='/'>Home</NavLink></li>
                         <li><NavLink to='/statistics'>Statistics</NavLink></li>
                         <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
@@ -31,14 +31,14 @@ const Navbar = () => {
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="flex flex-row gap-12 font-medium">
-                    <li><NavLink to='/'>Home</NavLink></li>
-                    <li><NavLink to='/statistics'>Statistics</NavLink></li>
-                    <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
+                    <li><NavLink to='/' className={({isActive}) => isActive ? 'text-red-500 font-bold' : 'text-black'}>Home</NavLink></li>
+                    <li><NavLink to='/statistics' className={({isActive}) => isActive ? 'text-red-500 font-bold' : 'text-black'}>Statistics</NavLink></li>
+                    <li><NavLink to='/dashboard' className={({isActive}) => isActive ? 'text-red-500 font-bold' : 'text-black'}>Dashboard</NavLink></li>
                 </ul>
             </div>
             <div className="navbar-end flex gap-4">
-                <BsCart3 className="text-5xl outline-2 outline-gray-100 outline rounded-full p-2"/>
-                <MdFavoriteBorder className="text-5xl outline-2 outline-gray-100 outline rounded-full p-2"/>
+                <BsCart3 className="text-5xl outline-2 outline-gray-100 outline rounded-full p-2 btn btn-ghost"/>
+                <MdFavoriteBorder className="text-5xl outline-2 outline-gray-100 outline rounded-full p-2 btn btn-ghost"/>
             </div>
         </nav>
     );
