@@ -14,6 +14,7 @@
 ## Create layout
 ### Header
 * Navbar
+* Hero Area
 ** Use react router
 * Hero area
 ## Add functionalities

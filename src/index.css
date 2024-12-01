@@ -2,3 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    @font-face {
+        font-family: 'Sora';
+        src: url('/src/fonts/Sora-VariableFont_wght.ttf');
+    }
+}
