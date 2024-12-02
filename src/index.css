@@ -3,8 +3,13 @@
 @tailwind utilities;
 
 @layer base {
-    @font-face {
-        font-family: 'Sora';
-        src: url('/src/fonts/Sora-VariableFont_wght.ttf');
-    }
+  @font-face {
+    font-family: "Sora";
+    src: url("/src/fonts/Sora-VariableFont_wght.ttf");
+  }
+}
+
+nav .active {
+  color: red;
+  font-weight: 600;
 }
