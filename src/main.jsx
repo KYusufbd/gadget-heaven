@@ -4,13 +4,14 @@ import { BrowserRouter, Route, Routes } from 'react-router';
 
 import './index.css'
 import App from './App.jsx'
+import Home from './Home.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<App />}>
-          <Route index element={<h1 className='text-5xl'>This is home page!</h1>}/>
+          <Route index element={<Home />}/>
           <Route path='statistics' element={<h1 className='text-5xl'>This is statistics page!</h1>}/>
           <Route path='dashboard' element={<h1 className='text-5xl'>This is dashboard!</h1>}/>
         </Route>

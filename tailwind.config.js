@@ -13,11 +13,20 @@ export default {
       'sans': ['Sora', ...defaultTheme.fontFamily.sans]
     },
 
-    extend: {},
+    extend: {
+      colors: {
+        'primary': '#9538E2'
+      },
+      spacing: {
+        'page-width': '1280px',
+        'banner-width': '1110px'
+      }
+    },
   },
 
   plugins: [
     require('daisyui'),
+    'prettier-plugin-tailwindcss'
   ],
 }
 
