@@ -3,7 +3,9 @@ import Banner from "./Banner";
 const Home = () => {
   return (
     <>
-      <Banner />
+      <header className="w-full bg-bgcol">
+        <Banner />
+      </header>
     </>
   );
 };

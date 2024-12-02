@@ -4,7 +4,7 @@ import { MdFavoriteBorder } from "react-icons/md";
 
 const Navbar = () => {
   return (
-    <nav className="navbar items-center my-6 w-11/12 max-w[1540px] mx-auto">
+    <nav className="max-w[1540px] navbar mx-auto my-6 w-11/12 items-center">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -23,7 +23,7 @@ const Navbar = () => {
               />
             </svg>
           </div>
-          <ul className="font-medium menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+          <ul className="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 font-medium shadow">
             <li>
               <NavLink to="/">Home</NavLink>
             </li>
@@ -35,7 +35,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <Link to="/" className="font-bold text-xl">
+        <Link to="/" className="text-xl font-bold">
           Gadget Heaven
         </Link>
       </div>
@@ -59,8 +59,8 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end flex gap-4">
-        <BsCart3 className="text-5xl outline-2 outline-gray-100 outline rounded-full p-2 btn btn-ghost" />
-        <MdFavoriteBorder className="text-5xl outline-2 outline-gray-100 outline rounded-full p-2 btn btn-ghost" />
+        <BsCart3 className="btn btn-ghost rounded-full p-2 text-5xl outline outline-2 outline-gray-100" />
+        <MdFavoriteBorder className="btn btn-ghost rounded-full p-2 text-5xl outline outline-2 outline-gray-100" />
       </div>
     </nav>
   );

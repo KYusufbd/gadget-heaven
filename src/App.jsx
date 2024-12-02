@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 function App() {
   return (
-    <div className="bg-[#F6F6F6]">
+    <div>
       <Navbar />
       <Outlet />
       <Footer />

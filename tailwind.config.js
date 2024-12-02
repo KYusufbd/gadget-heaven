@@ -13,6 +13,7 @@ export default {
     extend: {
       colors: {
         primary: "#9538E2",
+        bgcol: "#F6F6F6",
       },
       spacing: {
         "page-width": "1280px",
@@ -21,5 +22,5 @@ export default {
     },
   },
 
-  plugins: [require("daisyui"), "prettier-plugin-tailwindcss"],
+  plugins: [require("daisyui")],
 };
