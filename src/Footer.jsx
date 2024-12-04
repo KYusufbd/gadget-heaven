@@ -7,7 +7,7 @@ const Footer = () => {
           Leading the way in cutting-edge technology and innovation.
         </p>
       </div>
-      <hr className="mx-auto w-banner-width" />
+      <hr className="mx-auto max-w-banner-width" />
       <div className="mx-auto flex max-w-page-width flex-row flex-wrap justify-around gap-6 p-10 text-base-content">
         <nav className="flex w-44 flex-col items-center">
           <h6 className="footer-title">Services</h6>
