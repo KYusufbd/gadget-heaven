@@ -17,18 +17,20 @@ const GadgetCards = () => {
       <div className="col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4 lg:col-span-3 lg:grid-cols-3">
         {gadgets.map((p) => {
           return (
-            <div key={p.product_id} className="flex flex-col gap-6 rounded-2xl bg-white p-5">
-              <div className="flex h-52 w-full items-center justify-center overflow-hidden rounded-xl">
+            <div key={p.product_id} className="flex flex-col gap-6 rounded-2xl bg-white p-5 h-96">
+              <div className="flex h-64 w-full items-center justify-center overflow-hidden rounded-xl">
                 <img
                   src={p.product_image}
                   alt="gadget-item-image"
-                  className="min-h-full w-full"
+                  className="h-full min-w-full"
                 />
               </div>
-              <div className="gap-4">
-                <div className="gap-3">
+              <div className="flex flex-col gap-4 stretch-h justify-between">
+                <div className="flex flex-col gap-3">
                   <h5 className="text-2xl font-semibold">{p.product_title}</h5>
+                  <p className="font-medium opacity-60">Price: {p.price}$</p>
                 </div>
+                <button className="btn btn-ghost text-secondary border-secondary">View Details</button>
               </div>
             </div>
           );

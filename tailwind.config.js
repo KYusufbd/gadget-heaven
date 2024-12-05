@@ -16,11 +16,14 @@ export default {
         primary: "#9538E2",
         bgcol: "#F6F6F6",
         txtcol: "#09080F",
+        secondary: '#9538E2',
       },
+
       spacing: {
         "page-width": "1280px",
         "banner-width": "1110px",
       },
+
       fontSize: {
         "3xl": "2rem",
       },
