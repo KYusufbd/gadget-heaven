@@ -3,16 +3,31 @@ import { useEffect } from "react";
 
 const GadgetCards = () => {
   const [gadgets, setGadgets] = useState([]);
+  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     fetch("gadgets.json")
       .then((res) => res.json())
-      .then((data) => setGadgets(data));
+      .then((data) => setGadgets(data))
+      .then((() => {
+        const categs = [];
+        gadgets.map(e => {
+            if (!categs.includes(e.category)) {
+              categs.push(e.category);
+            };
+            setCategories(categs);
+        })
+      }))
   }, []);
+
   return (
     <div className="mx-auto grid max-w-page-width grid-cols-2 gap-4 py-8 md:grid-cols-3 md:gap-6 lg:grid-cols-4">
       <div className="col-span-2 md:col-span-1">
-        <h3 className="text-xl">This is categories side bar</h3>
+        {categories.map(e => {
+            return(
+                <button className="btn btn-ghost" key={categories.indexOf(e)}>{e}</button>
+            )
+        })}
       </div>
       <div className="col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4 lg:col-span-3 lg:grid-cols-3">
         {gadgets.map((p) => {
