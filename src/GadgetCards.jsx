@@ -4,6 +4,7 @@ import { useEffect } from "react";
 const GadgetCards = () => {
   const [gadgets, setGadgets] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [display, setDisplay] = useState([]);
 
   useEffect(() => {
     fetch("gadgets.json")
@@ -17,21 +18,28 @@ const GadgetCards = () => {
         if (!categs.includes(e.category)) {
             categs.push(e.category);
         };
-    });
-    setCategories(categs);
+      });
+        setCategories(categs);
+        setDisplay(gadgets);
     }, [gadgets])
+
+    // Filter by category function:
+    const filterByCategory = (c) => {
+        setDisplay(gadgets.filter(g => g.category === c));
+    };
 
   return (
     <div className="mx-auto grid max-w-page-width grid-cols-2 gap-4 py-8 md:grid-cols-3 md:gap-6 lg:grid-cols-4">
       <div className="col-span-2 md:col-span-1">
+        <button onClick={() => setDisplay(gadgets)} className="btn btn-ghost">View All</button>
         {categories.map(e => {
             return(
-                <button className="btn btn-ghost" key={categories.indexOf(e)}>{e}</button>
+                <button onClick={() => filterByCategory(e)} className="btn btn-ghost" key={categories.indexOf(e)}>{e}</button>
             )
         })}
       </div>
       <div className="col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4 lg:col-span-3 lg:grid-cols-3">
-        {gadgets.map((p) => {
+        {display.map((p) => {
           return (
             <div key={p.product_id} className="flex flex-col gap-6 rounded-2xl bg-white p-5 h-96">
               <div className="flex h-64 w-full items-center justify-center overflow-hidden rounded-xl">
