@@ -9,16 +9,17 @@ const GadgetCards = () => {
     fetch("gadgets.json")
       .then((res) => res.json())
       .then((data) => setGadgets(data))
-      .then((() => {
-        const categs = [];
-        gadgets.map(e => {
-            if (!categs.includes(e.category)) {
-              categs.push(e.category);
-            };
-            setCategories(categs);
-        })
-      }))
   }, []);
+
+    useEffect(() => {
+        const categs = [];
+    gadgets.map(e => {
+        if (!categs.includes(e.category)) {
+            categs.push(e.category);
+        };
+    });
+    setCategories(categs);
+    }, [gadgets])
 
   return (
     <div className="mx-auto grid max-w-page-width grid-cols-2 gap-4 py-8 md:grid-cols-3 md:gap-6 lg:grid-cols-4">
