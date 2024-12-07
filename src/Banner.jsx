@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 const Banner = () => {
   return (
     <>
@@ -12,9 +14,11 @@ const Banner = () => {
             it all!
           </p>
         </div>
-        <div className="btn bg-white text-xl font-bold text-primary">
-          Shop Now
-        </div>
+        <Link to='/dashboard'>
+          <div className="btn bg-white text-xl font-bold text-primary">
+            Shop Now
+          </div>
+        </Link>
       </div>
       <div className="mx-auto -mt-64 max-w-banner-width rounded-3xl border-2 border-solid border-white bg-[#ffffff4d] p-8">
         <img src="/banner.jpg" alt="gadget-image" className="rounded-2xl" />

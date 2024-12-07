@@ -30,11 +30,11 @@ const GadgetCards = () => {
 
   return (
     <div className="mx-auto grid max-w-page-width grid-cols-2 gap-4 py-8 md:grid-cols-3 md:gap-6 lg:grid-cols-4">
-      <div className="col-span-2 md:col-span-1">
-        <button onClick={() => setDisplay(gadgets)} className="btn btn-ghost">View All</button>
+      <div className="col-span-2 md:col-span-1 flex flex-col p-6 gap-6 bg-white rounded-2xl">
+        <button onClick={() => setDisplay(gadgets)} className="btn btn-ghost bg-bgcol w-full text-lg font-medium hover:bg-secondary hover:text-white hover:font-extrabold">All Product</button>
         {categories.map(e => {
             return(
-                <button onClick={() => filterByCategory(e)} className="btn btn-ghost" key={categories.indexOf(e)}>{e}</button>
+                <button onClick={() => filterByCategory(e)} className="btn btn-ghost bg-bgcol w-full text-lg font-medium hover:bg-secondary hover:text-white hover:font-extrabold" key={categories.indexOf(e)}>{e}</button>
             )
         })}
       </div>
