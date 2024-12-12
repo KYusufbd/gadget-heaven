@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import "./index.css";
 import App from "./App.jsx";
 import Home from "./Home.jsx";
+import Details from "./Details.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -12,6 +13,7 @@ createRoot(document.getElementById("root")).render(
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
+          <Route path="/details" element={<Details />} />
           <Route
             path="statistics"
             element={<h1 className="text-5xl">This is statistics page!</h1>}

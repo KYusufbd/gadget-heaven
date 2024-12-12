@@ -14,10 +14,10 @@ const Banner = () => {
             it all!
           </p>
         </div>
-        <Link to='/dashboard'>
-          <div className="btn bg-white text-xl font-bold text-primary">
+        <Link to="/dashboard">
+          <button className="btn bg-white text-xl font-bold text-primary">
             Shop Now
-          </div>
+          </button>
         </Link>
       </div>
       <div className="mx-auto -mt-64 max-w-banner-width rounded-3xl border-2 border-solid border-white bg-[#ffffff4d] p-8">

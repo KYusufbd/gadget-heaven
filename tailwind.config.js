@@ -16,7 +16,7 @@ export default {
         primary: "#9538E2",
         bgcol: "#F6F6F6",
         txtcol: "#09080F",
-        secondary: '#9538E2',
+        secondary: "#9538E2",
       },
 
       spacing: {

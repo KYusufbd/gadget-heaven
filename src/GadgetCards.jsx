@@ -1,47 +1,62 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useEffect } from "react";
 
 const GadgetCards = () => {
-  const [gadgets, setGadgets] = useState([]);
+  // const [gadgets, setGadgets] = useState([]);
   const [categories, setCategories] = useState([]);
   const [display, setDisplay] = useState([]);
+  const gadgets = useContext(GadgetContext);
+
+  // useEffect(() => {
+  //   fetch("gadgets.json")
+  //     .then((res) => res.json())
+  //     .then((data) => setGadgets(data));
+  // }, []);
 
   useEffect(() => {
-    fetch("gadgets.json")
-      .then((res) => res.json())
-      .then((data) => setGadgets(data))
-  }, []);
+    const categs = [];
+    gadgets.map((e) => {
+      if (!categs.includes(e.category)) {
+        categs.push(e.category);
+      }
+    });
+    setCategories(categs);
+    setDisplay(gadgets);
+  }, [gadgets]);
 
-    useEffect(() => {
-        const categs = [];
-    gadgets.map(e => {
-        if (!categs.includes(e.category)) {
-            categs.push(e.category);
-        };
-      });
-        setCategories(categs);
-        setDisplay(gadgets);
-    }, [gadgets])
-
-    // Filter by category function:
-    const filterByCategory = (c) => {
-        setDisplay(gadgets.filter(g => g.category === c));
-    };
+  // Filter by category function:
+  const filterByCategory = (c) => {
+    setDisplay(gadgets.filter((g) => g.category === c));
+  };
 
   return (
     <div className="mx-auto grid max-w-page-width grid-cols-2 gap-4 py-8 md:grid-cols-3 md:gap-6 lg:grid-cols-4">
-      <div className="col-span-2 md:col-span-1 flex flex-col p-6 gap-6 bg-white rounded-2xl">
-        <button onClick={() => setDisplay(gadgets)} className="btn btn-ghost bg-bgcol w-full text-lg font-medium hover:bg-secondary hover:text-white hover:font-extrabold">All Product</button>
-        {categories.map(e => {
-            return(
-                <button onClick={() => filterByCategory(e)} className="btn btn-ghost bg-bgcol w-full text-lg font-medium hover:bg-secondary hover:text-white hover:font-extrabold" key={categories.indexOf(e)}>{e}</button>
-            )
+      <div className="col-span-2 flex flex-col gap-6 rounded-2xl bg-white p-6 md:col-span-1">
+        <button
+          onClick={() => setDisplay(gadgets)}
+          className="btn btn-ghost w-full bg-bgcol text-lg font-medium hover:bg-secondary hover:font-extrabold hover:text-white"
+        >
+          All Product
+        </button>
+        {categories.map((e) => {
+          return (
+            <button
+              onClick={() => filterByCategory(e)}
+              className="btn btn-ghost w-full bg-bgcol text-lg font-medium hover:bg-secondary hover:font-extrabold hover:text-white"
+              key={categories.indexOf(e)}
+            >
+              {e}
+            </button>
+          );
         })}
       </div>
-      <div className="col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4 lg:col-span-3 lg:grid-cols-3">
+      <div className="col-span-2 grid grid-cols-1 gap-4 md:grid-cols-2 lg:col-span-3 lg:grid-cols-3">
         {display.map((p) => {
           return (
-            <div key={p.product_id} className="flex flex-col gap-6 rounded-2xl bg-white p-5 h-96">
+            <div
+              key={p.product_id}
+              className="flex h-96 flex-col gap-6 rounded-2xl bg-white p-5"
+            >
               <div className="flex h-64 w-full items-center justify-center overflow-hidden rounded-xl">
                 <img
                   src={p.product_image}
@@ -49,12 +64,14 @@ const GadgetCards = () => {
                   className="h-full min-w-full"
                 />
               </div>
-              <div className="flex flex-col gap-4 stretch-h justify-between">
+              <div className="stretch-h flex flex-col justify-between gap-4">
                 <div className="flex flex-col gap-3">
                   <h5 className="text-2xl font-semibold">{p.product_title}</h5>
                   <p className="font-medium opacity-60">Price: {p.price}$</p>
                 </div>
-                <button className="btn btn-ghost text-secondary border-secondary">View Details</button>
+                <button className="btn btn-ghost border-secondary text-lg font-semibold text-secondary">
+                  View Details
+                </button>
               </div>
             </div>
           );
@@ -65,20 +82,3 @@ const GadgetCards = () => {
 };
 
 export default GadgetCards;
-
-// {
-//     "product_id": "P002",
-//     "product_title": "Samsung Galaxy Z Fold5",
-//     "product_image": "https://img.freepik.com/premium-photo/all-screen-smartphone-with-icon-set-isolated-white-3d-render_118047-2162.jpg?w=740",
-//     "category": "Smartphones",
-//     "price": 1799,
-//     "description": "The Samsung Galaxy Z Fold5 brings foldable technology to the next level.",
-//     "specification": [
-//         "7.6-inch foldable Dynamic AMOLED display",
-//         "Snapdragon 8 Gen 2",
-//         "Dual battery with fast charging",
-//         "256GB to 1TB storage"
-//     ],
-//     "availability": true,
-//     "rating": 4.6
-// }
