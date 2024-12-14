@@ -8,7 +8,7 @@ function App() {
   const [gadgets, setGadgets] = useState([]);
 
   useEffect(() => {
-    fetch("gadgets.json")
+    fetch("/gadgets.json")
       .then((res) => res.json())
       .then((data) => setGadgets(data));
   }, []);

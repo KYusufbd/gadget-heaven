@@ -64,7 +64,7 @@ const GadgetCards = () => {
                   <h5 className="text-2xl font-semibold">{p.product_title}</h5>
                   <p className="font-medium opacity-60">Price: {p.price}$</p>
                 </div>
-                <Link to={'details/'+p.product_id}>
+                <Link to={"details/" + p.product_id}>
                   <button className="btn btn-ghost border-secondary text-lg font-semibold text-secondary">
                     View Details
                   </button>

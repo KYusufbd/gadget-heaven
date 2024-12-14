@@ -1,19 +1,24 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import GadgetContext from "./GadgetContext";
 
 const Details = () => {
   const [gadget, setGadget] = useState({});
-  const gadgets = useContext(GadgetContext); // Problem: can't use GadgetContex.
+  const gadgets = useContext(GadgetContext);
   const p = useParams();
-  const selectedGadget = gadgets.find(g => g.product_id === p.gadgetId);
-  // setGadget(selectedGadget);
+  const selectedGadget = gadgets.find((g) => g.product_id === p.gadgetId);
+
+  useEffect(() => {
+    setGadget(selectedGadget);
+  }, [selectedGadget]);
 
   // Testing perpose only:
-  console.log(GadgetContext);
-  
-  return(
-    <h1 className="text-3xl text-center font-bold">Details of product: {p.gadgetId}</h1>
+  console.log(gadget);
+
+  return (
+    <h1 className="text-center text-3xl font-bold">
+      Details of product: {p.gadgetId}
+    </h1>
   );
 };
 
