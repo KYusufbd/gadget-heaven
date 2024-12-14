@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { useParams } from "react-router";
-import { GadgetContext } from "./App";
+import GadgetContext from "./GadgetContext";
 
 const Details = () => {
   const [gadget, setGadget] = useState({});

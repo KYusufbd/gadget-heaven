@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { useEffect } from "react";
-import { GadgetContext } from "./App";
+import GadgetContext from "./GadgetContext";
 import { Link } from "react-router";
 
 const GadgetCards = () => {

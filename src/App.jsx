@@ -1,8 +1,8 @@
 import { Outlet } from "react-router";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import { createContext, useEffect, useState } from "react";
-export const GadgetContext = createContext(null);
+import { useEffect, useState } from "react";
+import GadgetContext from "./GadgetContext";
 
 function App() {
   const [gadgets, setGadgets] = useState([]);
