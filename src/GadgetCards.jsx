@@ -24,9 +24,6 @@ const GadgetCards = () => {
     setDisplay(gadgets.filter((g) => g.category === c));
   };
 
-  // Testing perpose only:
-  console.log(gadgets);
-
   return (
     <div className="mx-auto grid max-w-page-width grid-cols-2 gap-4 py-8 md:grid-cols-3 md:gap-6 lg:grid-cols-4">
       <div className="col-span-2 flex flex-col gap-6 rounded-2xl bg-white p-6 md:col-span-1">
