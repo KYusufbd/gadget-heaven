@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { useEffect } from "react";
 import { GadgetContext } from "./App";
+import { Link } from "react-router";
 
 const GadgetCards = () => {
   const [categories, setCategories] = useState([]);
@@ -22,6 +23,9 @@ const GadgetCards = () => {
   const filterByCategory = (c) => {
     setDisplay(gadgets.filter((g) => g.category === c));
   };
+
+  // Testing perpose only:
+  console.log(gadgets);
 
   return (
     <div className="mx-auto grid max-w-page-width grid-cols-2 gap-4 py-8 md:grid-cols-3 md:gap-6 lg:grid-cols-4">
@@ -63,9 +67,11 @@ const GadgetCards = () => {
                   <h5 className="text-2xl font-semibold">{p.product_title}</h5>
                   <p className="font-medium opacity-60">Price: {p.price}$</p>
                 </div>
-                <button className="btn btn-ghost border-secondary text-lg font-semibold text-secondary">
-                  View Details
-                </button>
+                <Link to={'details/'+p.product_id}>
+                  <button className="btn btn-ghost border-secondary text-lg font-semibold text-secondary">
+                    View Details
+                  </button>
+                </Link>
               </div>
             </div>
           );

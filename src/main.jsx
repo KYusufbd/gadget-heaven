@@ -13,7 +13,7 @@ createRoot(document.getElementById("root")).render(
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
-          <Route path="/details" element={<Details />} />
+          <Route path="/details/:gadgetId" element={<Details />} />
           <Route
             path="statistics"
             element={<h1 className="text-5xl">This is statistics page!</h1>}
