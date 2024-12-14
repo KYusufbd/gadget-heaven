@@ -1,17 +1,11 @@
 import { useContext, useState } from "react";
 import { useEffect } from "react";
+import { GadgetContext } from "./App";
 
 const GadgetCards = () => {
-  // const [gadgets, setGadgets] = useState([]);
   const [categories, setCategories] = useState([]);
   const [display, setDisplay] = useState([]);
   const gadgets = useContext(GadgetContext);
-
-  // useEffect(() => {
-  //   fetch("gadgets.json")
-  //     .then((res) => res.json())
-  //     .then((data) => setGadgets(data));
-  // }, []);
 
   useEffect(() => {
     const categs = [];
