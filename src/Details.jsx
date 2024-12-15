@@ -12,9 +12,8 @@ const Details = () => {
   }, [gadgets, p.gadgetId]);
 
   // Testing purpose only:
-  setTimeout(() => {
-    console.log(gadgets);
-  }, 5000); 
+  console.log(gadgets);
+  // The problem is detected: useContext doesn't import Context after refreshing. This is time to find the solution.
 
   return (
     <div>
