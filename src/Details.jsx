@@ -6,20 +6,59 @@ const Details = () => {
   const [gadget, setGadget] = useState({});
   const gadgets = useContext(GadgetContext);
   const p = useParams();
-  const selectedGadget = gadgets.find((g) => g.product_id === p.gadgetId);
-
+  
   useEffect(() => {
-    setGadget(selectedGadget);
-  }, [selectedGadget]);
+    setGadget(gadgets.find(g => g.product_id === p.gadgetId));
+  }, [gadgets, p.gadgetId]);
 
-  // Testing perpose only:
-  console.log(gadget);
+  // Testing purpose only:
+  setTimeout(() => {
+    console.log(gadgets);
+  }, 5000); 
 
   return (
-    <h1 className="text-center text-3xl font-bold">
-      Details of product: {p.gadgetId}
-    </h1>
+    <div>
+      <div className="bg-primary px-5 pt-8 pb-48">
+        <h1 className="text-center text-3xl font-bold text-white">
+          Product Details
+        </h1>
+        <p className="text-base text-white mx-auto text-center max-w-3xl">Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
+      </div>
+      <div className="w-full bg-bgcol">
+        <div className="w-11/12 max-w-page-width mx-auto p-8 bg-white rounded-3xl flex flex-row gap-8">
+          <div className="overflow-hidden rounded-2xl max-w-lg">
+            <img src={gadget.product_image} alt="gadget-image" className="h-full min-w-full"/>
+          </div>
+          <div>
+            <h4 className="font-semibold">{gadget.product_title}</h4>
+            <p className="font-semibold text-xl">{"Price: $ " + gadget.price}</p>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
 export default Details;
+
+
+/*
+Development purpose only:
+An object isntance:
+{
+    "product_id": "P005",
+    "product_title": "Garmin Forerunner 265",
+    "product_image": "https://img.freepik.com/free-vector/fitness-trackers-concept_23-2148529803.jpg?t=st=1730981984~exp=1730985584~hmac=4a412996bd2a2a4915478b269d4184b90a7fc66abd772bf61f2f9407e177c3e9&w=740",
+    "category": "Wearables",
+    "price": 399,
+    "description": "Advanced GPS smartwatch designed for runners and athletes.",
+    "specification": [
+        "1.3-inch AMOLED display",
+        "Multi-GNSS support",
+        "Heart rate and SpO2 monitoring",
+        "Up to 15 days battery life in smartwatch mode"
+    ],
+    "availability": true,
+    "rating": 4.5
+}
+*/

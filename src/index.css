@@ -7,6 +7,10 @@
     font-family: "Sora";
     src: url("/src/fonts/Sora-VariableFont_wght.ttf");
   }
+
+  h4 {
+    @apply text-[28px];
+  }
 }
 
 nav .active {
