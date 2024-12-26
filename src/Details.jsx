@@ -6,9 +6,9 @@ const Details = () => {
   const [gadget, setGadget] = useState({});
   const gadgets = useContext(GadgetContext);
   const p = useParams();
-  
+
   useEffect(() => {
-    setGadget(gadgets.find(g => g.product_id === p.gadgetId));
+    setGadget(gadgets.find((g) => g.product_id === p.gadgetId));
   }, [gadgets, p.gadgetId]);
 
   // Testing purpose only:
@@ -17,20 +17,29 @@ const Details = () => {
 
   return (
     <div>
-      <div className="bg-primary px-5 pt-8 pb-48">
+      <div className="bg-primary px-5 pb-48 pt-8">
         <h1 className="text-center text-3xl font-bold text-white">
           Product Details
         </h1>
-        <p className="text-base text-white mx-auto text-center max-w-3xl">Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
+        <p className="mx-auto max-w-3xl text-center text-base text-white">
+          Explore the latest gadgets that will take your experience to the next
+          level. From smart devices to the coolest accessories, we have it all!
+        </p>
       </div>
       <div className="w-full bg-bgcol">
-        <div className="w-11/12 max-w-page-width mx-auto p-8 bg-white rounded-3xl flex flex-row gap-8">
-          <div className="overflow-hidden rounded-2xl max-w-lg">
-            <img src={gadget.product_image} alt="gadget-image" className="h-full min-w-full"/>
+        <div className="mx-auto flex w-11/12 max-w-page-width flex-row gap-8 rounded-3xl bg-white p-8">
+          <div className="max-w-lg overflow-hidden rounded-2xl">
+            <img
+              src={gadget?.product_image}
+              alt="gadget-image"
+              className="h-full min-w-full"
+            />
           </div>
           <div>
-            <h4 className="font-semibold">{gadget.product_title}</h4>
-            <p className="font-semibold text-xl">{"Price: $ " + gadget.price}</p>
+            <h4 className="font-semibold">{gadget?.product_title}</h4>
+            <p className="text-xl font-semibold">
+              {"Price: $ " + gadget?.price}
+            </p>
           </div>
         </div>
       </div>
@@ -39,7 +48,6 @@ const Details = () => {
 };
 
 export default Details;
-
 
 /*
 Development purpose only:
