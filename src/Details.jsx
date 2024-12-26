@@ -35,11 +35,29 @@ const Details = () => {
               className="h-full min-w-full"
             />
           </div>
-          <div>
+          <div className="flex flex-col gap-6">
             <h4 className="font-semibold">{gadget?.product_title}</h4>
             <p className="text-xl font-semibold">
               {"Price: $ " + gadget?.price}
             </p>
+            {gadget?.availability ? (
+              <div className="w-max rounded-full border-2 border-green-600 bg-green-100 px-2 py-1 text-sm font-medium text-green-600">
+                In Stock
+              </div>
+            ) : (
+              <div className="w-max rounded-full border-2 border-warning bg-yellow-100 px-2 py-1 text-sm font-medium text-warning">
+                Not Available
+              </div>
+            )}
+            <p className="text-lg text-txtcol opacity-60">
+              {gadget?.description}
+            </p>
+            <h6 className="text-lg font-bold">Specification:</h6>
+            <ol className="text-lg opacity-60">
+              {gadget?.specification.map((s) => (
+                <li key={gadget?.specification.indexOf(s)}>{s}</li>
+              ))}
+            </ol>
           </div>
         </div>
       </div>
