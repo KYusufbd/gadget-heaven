@@ -11,23 +11,22 @@ const Details = () => {
     setGadget(gadgets.find((g) => g.product_id === p.gadgetId));
   }, [gadgets, p.gadgetId]);
 
-  // Testing purpose only:
-  console.log(gadgets);
-  // The problem is detected: useContext doesn't import Context after refreshing. This is time to find the solution.
+  useEffect(() => {scrollTo(0, 0)}, [])
 
   return (
     <div>
-      <div className="bg-primary px-5 pb-48 pt-8">
-        <h1 className="text-center text-3xl font-bold text-white">
-          Product Details
-        </h1>
-        <p className="mx-auto max-w-3xl text-center text-base text-white">
-          Explore the latest gadgets that will take your experience to the next
-          level. From smart devices to the coolest accessories, we have it all!
-        </p>
-      </div>
-      <div className="w-full bg-bgcol">
-        <div className="mx-auto flex w-11/12 max-w-page-width flex-row gap-8 rounded-3xl bg-white p-8">
+      <div className="w-full bg-bgcol pb-24">
+        <div className="bg-primary px-5 pb-48 pt-8">
+          <h1 className="text-center text-3xl font-bold text-white">
+            Product Details
+          </h1>
+          <p className="mx-auto max-w-3xl text-center text-base text-white">
+            Explore the latest gadgets that will take your experience to the
+            next level. From smart devices to the coolest accessories, we have
+            it all!
+          </p>
+        </div>
+        <div className="mx-auto -mt-32 flex w-11/12 max-w-page-width flex-row gap-8 rounded-3xl bg-white p-8">
           <div className="max-w-lg overflow-hidden rounded-2xl">
             <img
               src={gadget?.product_image}
@@ -53,8 +52,8 @@ const Details = () => {
               {gadget?.description}
             </p>
             <h6 className="text-lg font-bold">Specification:</h6>
-            <ol className="text-lg opacity-60">
-              {gadget?.specification.map((s) => (
+            <ol className="text-lg opacity-60 list-decimal pl-5">
+              {gadget?.specification?.map((s) => (
                 <li key={gadget?.specification.indexOf(s)}>{s}</li>
               ))}
             </ol>
