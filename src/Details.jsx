@@ -1,17 +1,21 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import GadgetContext from "./GadgetContext";
+import { Rating } from "@mui/material";
 
 const Details = () => {
   const [gadget, setGadget] = useState({});
+  const [rating, setRating] = useState(2.1);
   const gadgets = useContext(GadgetContext);
   const p = useParams();
-
   useEffect(() => {
     setGadget(gadgets.find((g) => g.product_id === p.gadgetId));
   }, [gadgets, p.gadgetId]);
 
-  useEffect(() => {scrollTo(0, 0)}, [])
+  // This code is to scroll to top when the route is changed.
+  useEffect(() => {scrollTo(0, 0)}, []);
+
+  useEffect(() => {setRating(gadget?.rating)}, [gadget]);
 
   return (
     <div>
@@ -57,6 +61,13 @@ const Details = () => {
                 <li key={gadget?.specification.indexOf(s)}>{s}</li>
               ))}
             </ol>
+            <div className="flex flex-col gap-2">
+              <h6 className="font-bold text-lg">Rating</h6>
+              <div className="flex flex-row gap-4 items-center">
+                <Rating name="half-rating-read" precision={0.1} value={rating} readOnly />
+                <div className="px-4 py-2 bg-bgcol rounded-full text-sm font-medium opacity-80">{rating}</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
