@@ -4,6 +4,7 @@ import GadgetContext from "./GadgetContext";
 import { Rating } from "@mui/material";
 import StarHalfIcon from "@mui/icons-material/StarHalf";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 
 const Details = () => {
   const [gadget, setGadget] = useState({});
@@ -37,7 +38,7 @@ const Details = () => {
           </p>
         </div>
         <div className="mx-auto -mt-32 flex w-11/12 max-w-page-width flex-row gap-8 rounded-3xl bg-white p-8">
-          <div className="max-w-lg overflow-hidden rounded-2xl">
+          <div className="max-w-lg overflow-hidden rounded-2xl drop-shadow-xl">
             <img
               src={gadget?.product_image}
               alt="gadget-image"
@@ -82,10 +83,15 @@ const Details = () => {
                   {rating}
                 </div>
               </div>
-              <button className="btn w-max rounded-full bg-primary px-5 py-3 text-lg font-bold text-white hover:bg-primary hover:opacity-60">
-                Add To Card
-                <ShoppingCartOutlinedIcon />
-              </button>
+              <div className="flex flex-row gap-4">
+                <button className="btn w-max rounded-full bg-primary px-5 py-3 text-lg font-bold text-white hover:bg-primary hover:opacity-70">
+                  Add To Card
+                  <ShoppingCartOutlinedIcon />
+                </button>
+                <button className="btn rounded-full bg-transparent p-3 outline outline-1">
+                  <FavoriteBorderOutlinedIcon />
+                </button>
+              </div>
             </div>
           </div>
         </div>
