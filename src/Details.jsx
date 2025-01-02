@@ -2,6 +2,8 @@ import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import GadgetContext from "./GadgetContext";
 import { Rating } from "@mui/material";
+import StarHalfIcon from "@mui/icons-material/StarHalf";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 
 const Details = () => {
   const [gadget, setGadget] = useState({});
@@ -13,9 +15,13 @@ const Details = () => {
   }, [gadgets, p.gadgetId]);
 
   // This code is to scroll to top when the route is changed.
-  useEffect(() => {scrollTo(0, 0)}, []);
+  useEffect(() => {
+    scrollTo(0, 0);
+  }, []);
 
-  useEffect(() => {setRating(gadget?.rating)}, [gadget]);
+  useEffect(() => {
+    setRating(gadget?.rating);
+  }, [gadget]);
 
   return (
     <div>
@@ -56,17 +62,30 @@ const Details = () => {
               {gadget?.description}
             </p>
             <h6 className="text-lg font-bold">Specification:</h6>
-            <ol className="text-lg opacity-60 list-decimal pl-5">
+            <ol className="list-decimal pl-5 text-lg opacity-60">
               {gadget?.specification?.map((s) => (
                 <li key={gadget?.specification.indexOf(s)}>{s}</li>
               ))}
             </ol>
             <div className="flex flex-col gap-2">
-              <h6 className="font-bold text-lg">Rating</h6>
-              <div className="flex flex-row gap-4 items-center">
-                <Rating name="half-rating-read" precision={0.1} value={rating} readOnly />
-                <div className="px-4 py-2 bg-bgcol rounded-full text-sm font-medium opacity-80">{rating}</div>
+              <h6 className="text-lg font-bold">
+                Rating <StarHalfIcon color="action" />
+              </h6>
+              <div className="flex flex-row items-center gap-4">
+                <Rating
+                  name="half-rating-read"
+                  precision={0.1}
+                  value={rating}
+                  readOnly
+                />
+                <div className="rounded-full bg-bgcol px-4 py-2 text-sm font-medium opacity-80">
+                  {rating}
+                </div>
               </div>
+              <button className="btn w-max rounded-full bg-primary px-5 py-3 text-lg font-bold text-white hover:bg-primary hover:opacity-60">
+                Add To Card
+                <ShoppingCartOutlinedIcon />
+              </button>
             </div>
           </div>
         </div>

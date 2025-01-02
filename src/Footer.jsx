@@ -3,7 +3,7 @@ const Footer = () => {
     <footer className="w-full bg-white py-6 text-txtcol">
       <div className="flex w-full flex-col items-center gap-3 pb-8">
         <h3 className="text-3xl font-bold">Gadget Heaven</h3>
-        <p className="font-medium opacity-60">
+        <p className="text-center font-medium opacity-60">
           Leading the way in cutting-edge technology and innovation.
         </p>
       </div>
