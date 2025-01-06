@@ -6,6 +6,7 @@ import "./index.css";
 import App from "./App.jsx";
 import Home from "./Home.jsx";
 import Details from "./Details.jsx";
+import Dashboard from "./Dashboard.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -20,7 +21,7 @@ createRoot(document.getElementById("root")).render(
           />
           <Route
             path="dashboard"
-            element={<h1 className="text-5xl">This is dashboard!</h1>}
+            element={<Dashboard />}
           />
         </Route>
       </Routes>
