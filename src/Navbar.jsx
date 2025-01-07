@@ -59,8 +59,12 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end flex gap-4">
-        <BsCart3 className="btn btn-ghost rounded-full p-2 text-5xl outline outline-2 outline-gray-100" />
-        <MdFavoriteBorder className="btn btn-ghost rounded-full p-2 text-5xl outline outline-2 outline-gray-100" />
+        <Link to={"/dashboard/cart"}>
+          <BsCart3 className="btn btn-ghost rounded-full p-2 text-5xl outline outline-2 outline-gray-100" />
+        </Link>
+        <Link to={"/dashboard/wishlist"}>
+          <MdFavoriteBorder className="btn btn-ghost rounded-full p-2 text-5xl outline outline-2 outline-gray-100" />
+        </Link>
       </div>
     </nav>
   );

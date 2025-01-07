@@ -14,7 +14,7 @@ const Banner = () => {
             it all!
           </p>
         </div>
-        <Link to="/dashboard">
+        <Link to="/dashboard/cart">
           <button className="btn bg-white text-xl font-bold text-primary">
             Shop Now
           </button>
