@@ -52,7 +52,7 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/dashboard" className="hover:underline">
+            <NavLink to="/dashboard/cart" className="hover:underline">
               Dashboard
             </NavLink>
           </li>
