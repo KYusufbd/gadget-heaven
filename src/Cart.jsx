@@ -1,8 +1,10 @@
 import { useContext } from "react";
 import { DashboardContext } from "./DashboardContext";
+import GadgetContext from "./GadgetContext";
 
 
 const Cart = () => {
+    const gadgets = useContext(GadgetContext);
     const {cart, setCart} = useContext(DashboardContext);
 
     return (
