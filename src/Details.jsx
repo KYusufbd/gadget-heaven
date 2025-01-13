@@ -14,13 +14,21 @@ const Details = () => {
   const {cart, setCart, wishlist, setWishlist} = useContext(DashboardContext);
   const p = useParams();
   
-  console.log(cart); // Testing purpuse only.
+  // Testing purpuse only:
+  console.log(`Cart: ${cart}. Wishlist: ${wishlist}.`);
 
   // Add to cart function:
   function addToCart(itemId) {
     if (!cart.includes(itemId)) {
       setCart([...cart, itemId]);
     };
+  };
+
+  // Add to wishlist function:
+  function addToWishlist(itemId) {
+    if(!wishlist.includes(itemId)) {
+      setWishlist([...wishlist, itemId]);
+    }
   };
 
   useEffect(() => {
@@ -97,10 +105,10 @@ const Details = () => {
               </div>
               <div className="flex flex-row gap-4">
                 <button onClick={() => addToCart(gadget.product_id)} className="btn w-max rounded-full bg-primary px-5 py-3 text-lg font-bold text-white hover:bg-primary hover:opacity-70">
-                  Add To Card
+                  {!cart.includes(gadget.product_id) ? "Add To Card" : "Already added!"}
                   <ShoppingCartOutlinedIcon />
                 </button>
-                <button className="btn rounded-full bg-transparent p-3 outline outline-1">
+                <button onClick={() => addToWishlist(gadget.product_id)} className="btn rounded-full bg-transparent p-3 outline outline-1">
                   <FavoriteBorderOutlinedIcon />
                 </button>
               </div>
