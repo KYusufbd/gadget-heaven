@@ -105,7 +105,7 @@ const Details = () => {
               </div>
               <div className="flex flex-row gap-4">
                 <button onClick={() => addToCart(gadget.product_id)} className="btn w-max rounded-full bg-primary px-5 py-3 text-lg font-bold text-white hover:bg-primary hover:opacity-70">
-                  {!cart.includes(gadget.product_id) ? "Add To Card" : "Already added!"}
+                  {!cart.includes(gadget?.product_id) ? "Add To Card" : "Already added!"}
                   <ShoppingCartOutlinedIcon />
                 </button>
                 <button onClick={() => addToWishlist(gadget.product_id)} className="btn rounded-full bg-transparent p-3 outline outline-1">
