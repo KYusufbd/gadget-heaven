@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import GadgetContext from "./GadgetContext";
+import { DashboardContext } from "./DashboardContext";
 import { Rating } from "@mui/material";
 import StarHalfIcon from "@mui/icons-material/StarHalf";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
@@ -10,7 +11,18 @@ const Details = () => {
   const [gadget, setGadget] = useState({});
   const [rating, setRating] = useState(2.1);
   const gadgets = useContext(GadgetContext);
+  const {cart, setCart, wishlist, setWishlist} = useContext(DashboardContext);
   const p = useParams();
+  
+  console.log(cart); // Testing purpuse only.
+
+  // Add to cart function:
+  function addToCart(itemId) {
+    if (!cart.includes(itemId)) {
+      setCart([...cart, itemId]);
+    };
+  };
+
   useEffect(() => {
     setGadget(gadgets.find((g) => g.product_id === p.gadgetId));
   }, [gadgets, p.gadgetId]);
@@ -84,7 +96,7 @@ const Details = () => {
                 </div>
               </div>
               <div className="flex flex-row gap-4">
-                <button className="btn w-max rounded-full bg-primary px-5 py-3 text-lg font-bold text-white hover:bg-primary hover:opacity-70">
+                <button onClick={() => addToCart(gadget.product_id)} className="btn w-max rounded-full bg-primary px-5 py-3 text-lg font-bold text-white hover:bg-primary hover:opacity-70">
                   Add To Card
                   <ShoppingCartOutlinedIcon />
                 </button>
@@ -102,6 +114,7 @@ const Details = () => {
 
 export default Details;
 
+console.log("You have to remove lines below when the project is complete!");
 /*
 Development purpose only:
 An object isntance:
