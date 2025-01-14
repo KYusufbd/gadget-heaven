@@ -24,11 +24,18 @@ const Cart = () => {
                     <h5 className="text-2xl font-bold">Total cost: {totalCost}</h5>
                 </div>
             </div>
-            <div className="mx-auto max-w-page-width bg-white">
+            <div className="mx-auto max-w-page-width flex flex-col gap-6">
                 {gadgets.map(gadget => {
                     if (cart.includes(gadget.product_id)) {
                         return (
-                            <h1 className="text-2xl font-semibold">{gadget?.product_title}</h1>
+                            <div className="flex flex-row bg-white">
+                                <div></div>
+                                <div className="flex flex-col">
+                                    <h1 className="text-2xl font-semibold">{gadget?.product_title}</h1>
+                                    <p className="text-lg opacity-60">{gadget?.description}</p>
+                                    <p className="text-xl font-semibold opacity-80">Price: ${gadget?.price}</p>
+                                </div>
+                            </div>
                         )
                     }
                 })}
