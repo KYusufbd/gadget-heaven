@@ -11,9 +11,9 @@ const Details = () => {
   const [gadget, setGadget] = useState({});
   const [rating, setRating] = useState(2.1);
   const gadgets = useContext(GadgetContext);
-  const {cart, setCart, wishlist, setWishlist} = useContext(DashboardContext);
+  const { cart, setCart, wishlist, setWishlist } = useContext(DashboardContext);
   const p = useParams();
-  
+
   // Testing purpuse only:
   console.log(`Cart: ${cart}. Wishlist: ${wishlist}.`);
 
@@ -21,15 +21,15 @@ const Details = () => {
   function addToCart(itemId) {
     if (!cart.includes(itemId)) {
       setCart([...cart, itemId]);
-    };
-  };
+    }
+  }
 
   // Add to wishlist function:
   function addToWishlist(itemId) {
-    if(!wishlist.includes(itemId)) {
+    if (!wishlist.includes(itemId)) {
       setWishlist([...wishlist, itemId]);
     }
-  };
+  }
 
   useEffect(() => {
     setGadget(gadgets.find((g) => g.product_id === p.gadgetId));
@@ -104,11 +104,19 @@ const Details = () => {
                 </div>
               </div>
               <div className="flex flex-row gap-4">
-                <button onClick={() => addToCart(gadget.product_id)} className="btn w-max rounded-full bg-primary px-5 py-3 text-lg font-bold text-white hover:bg-primary hover:opacity-70">
-                  {!cart.includes(gadget?.product_id) ? "Add To Card" : "Already added!"}
+                <button
+                  onClick={() => addToCart(gadget.product_id)}
+                  className="btn w-max rounded-full bg-primary px-5 py-3 text-lg font-bold text-white hover:bg-primary hover:opacity-70"
+                >
+                  {!cart.includes(gadget?.product_id)
+                    ? "Add To Card"
+                    : "Already added!"}
                   <ShoppingCartOutlinedIcon />
                 </button>
-                <button onClick={() => addToWishlist(gadget.product_id)} className="btn rounded-full bg-transparent p-3 outline outline-1">
+                <button
+                  onClick={() => addToWishlist(gadget.product_id)}
+                  className="btn rounded-full bg-transparent p-3 outline outline-1"
+                >
                   <FavoriteBorderOutlinedIcon />
                 </button>
               </div>

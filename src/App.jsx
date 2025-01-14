@@ -18,17 +18,17 @@ function App() {
 
   const [wishlist, setWishlist] = useState([]);
 
-  const cartAndWishlist = {cart, setCart, wishlist, setWishlist};
+  const cartAndWishlist = { cart, setCart, wishlist, setWishlist };
 
   return (
     <DashboardContext.Provider value={cartAndWishlist}>
-    <GadgetContext.Provider value={gadgets}>
-      <div>
-        <Navbar />
-        <Outlet />
-        <Footer />
-      </div>
-    </GadgetContext.Provider>
+      <GadgetContext.Provider value={gadgets}>
+        <div>
+          <Navbar />
+          <Outlet />
+          <Footer />
+        </div>
+      </GadgetContext.Provider>
     </DashboardContext.Provider>
   );
 }

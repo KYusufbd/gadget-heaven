@@ -21,9 +21,9 @@ createRoot(document.getElementById("root")).render(
             path="statistics"
             element={<h1 className="text-5xl">This is statistics page!</h1>}
           />
-          <Route path="/dashboard" element={<Dashboard />} >
-            <Route path="/dashboard/cart" element={<Cart />}/>
-            <Route path="/dashboard/wishlist" element={<Wishlist />}/>
+          <Route path="/dashboard" element={<Dashboard />}>
+            <Route path="/dashboard/cart" element={<Cart />} />
+            <Route path="/dashboard/wishlist" element={<Wishlist />} />
           </Route>
         </Route>
       </Routes>
