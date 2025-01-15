@@ -26,8 +26,10 @@ const Cart = () => {
         {gadgets.map((gadget) => {
           if (cart.includes(gadget.product_id)) {
             return (
-              <div className="flex flex-row bg-white">
-                <div></div>
+              <div className="flex flex-row bg-white p-8 rounded-2xl gap-8">
+                <div className="w-52 h-32 overflow-hidden rounded-xl aspect-square flex justify-center items-center">
+                  <img className="w-full min-h-full" src={gadget?.product_image} alt="gadget-image" />
+                </div>
                 <div className="flex flex-col">
                   <h1 className="text-2xl font-semibold">
                     {gadget?.product_title}
