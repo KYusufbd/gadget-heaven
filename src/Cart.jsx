@@ -7,11 +7,17 @@ const Cart = () => {
   const { cart, setCart } = useContext(DashboardContext);
   const [totalCost, setTotalCost] = useState(0);
   useEffect(() => {
+    const prices = [];
     gadgets.map((g) => {
       if (cart.includes(g.product_id)) {
-        setTotalCost(totalCost + g.price);
+        prices.push(g.price);
       }
     });
+    let cost = 0;
+    for(let i = 0; i < prices.length; i++) {
+      cost += prices[i];
+    }
+    setTotalCost(cost);
   }, [cart]);
 
   return (
