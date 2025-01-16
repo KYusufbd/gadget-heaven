@@ -26,8 +26,8 @@ const Cart = () => {
   // Function for removing items from cart
   const removeFromCart = (item) => {
     const updatedCart = [];
-    cart.map((i) => {
-      !i===item && updatedCart.push(i);
+    cart.map(i => {
+      !i === item && updatedCart.push(i);
     })
     setCart(updatedCart);
   };
@@ -57,7 +57,7 @@ const Cart = () => {
                     Price: ${gadget?.price}
                   </p>
                 </div>
-                <button onClick={() => removeFromCart(gadget?.product_id)}>
+                <button onClick={() => removeFromCart(gadget.product_id)}>
                   <CloseIcon/>
                 </button>
               </div>
