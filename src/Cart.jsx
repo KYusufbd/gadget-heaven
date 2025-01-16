@@ -1,11 +1,14 @@
 import { useContext, useEffect, useState } from "react";
 import { DashboardContext } from "./DashboardContext";
 import GadgetContext from "./GadgetContext";
+import CloseIcon from '@mui/icons-material/Close';
 
 const Cart = () => {
   const gadgets = useContext(GadgetContext);
   const { cart, setCart } = useContext(DashboardContext);
   const [totalCost, setTotalCost] = useState(0);
+
+  // This codes shows total cost of items of cart
   useEffect(() => {
     const prices = [];
     gadgets.map((g) => {
@@ -19,6 +22,15 @@ const Cart = () => {
     }
     setTotalCost(cost);
   }, [cart]);
+
+  // Function for removing items from cart
+  const removeFromCart = (item) => {
+    const updatedCart = [];
+    cart.map((i) => {
+      !i===item && updatedCart.push(i);
+    })
+    setCart(updatedCart);
+  };
 
   return (
     <div className="flex w-full flex-col gap-8 bg-bgcol px-4">
@@ -45,6 +57,9 @@ const Cart = () => {
                     Price: ${gadget?.price}
                   </p>
                 </div>
+                <button onClick={() => removeFromCart(gadget?.product_id)}>
+                  <CloseIcon/>
+                </button>
               </div>
             );
           }
