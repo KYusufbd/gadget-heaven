@@ -21,7 +21,7 @@ const Cart = () => {
       cost += prices[i];
     }
     setTotalCost(cost);
-  }, [cart]);
+  }, [cart, gadgets]);
 
   // Function for removing items from cart
   const removeFromCart = (item) => {
@@ -37,14 +37,14 @@ const Cart = () => {
       <div className="mx-auto flex w-page-width max-w-full flex-row justify-between">
         <h5 className="text-2xl font-bold">Cart</h5>
         <div>
-          <h5 className="text-2xl font-bold">Total cost: {totalCost}</h5>
+          <h5 className="text-2xl font-bold">Total cost: {totalCost}</h5>
         </div>
       </div>
       <div className="mx-auto flex max-w-page-width flex-col gap-6">
         {gadgets.map((gadget) => {
           if (cart.includes(gadget.product_id)) {
             return (
-              <div className="flex flex-row bg-white p-8 rounded-2xl gap-8">
+              <div key={gadgets.indexOf(gadget)} className="flex flex-row bg-white p-8 rounded-2xl gap-8">
                 <div className="w-52 h-32 overflow-hidden rounded-xl aspect-square flex justify-center items-center">
                   <img className="w-full min-h-full" src={gadget?.product_image} alt="gadget-image" />
                 </div>
