@@ -29,7 +29,7 @@ const Cart = () => {
   };
 
   return (
-    <div className="flex w-full flex-col gap-8 bg-bgcol px-4">
+    <div className="flex w-full flex-col gap-8 bg-bgcol px-4 pb-16">
       <div className="mx-auto flex w-page-width max-w-full flex-row justify-between">
         <h5 className="text-2xl font-bold">Cart</h5>
         <div>
@@ -53,7 +53,7 @@ const Cart = () => {
                     Price: ${gadget?.price}
                   </p>
                 </div>
-                <button onClick={() => removeFromCart(gadget.product_id)}>
+                <button onClick={() => removeFromCart(gadget.product_id)} className="border-red-500 border border-2px rounded-full h-fit ml-auto">
                   <CloseIcon/>
                 </button>
               </div>
