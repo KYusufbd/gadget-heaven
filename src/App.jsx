@@ -14,11 +14,27 @@ function App() {
       .then((data) => setGadgets(data));
   }, []);
 
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(["P004", "P007", "P005", "P011"]);
 
-  const [wishlist, setWishlist] = useState([]);
+  const [wishlist, setWishlist] = useState(["P002", "P009", "P010", "P013"]);
 
-  const cartAndWishlist = { cart, setCart, wishlist, setWishlist };
+  // Function for formatting numbers:
+  const formatNumber = (number) => {
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(number);
+  };
+
+  const cartAndWishlist = {
+    cart,
+    setCart,
+    wishlist,
+    setWishlist,
+    formatNumber,
+  };
 
   return (
     <DashboardContext.Provider value={cartAndWishlist}>

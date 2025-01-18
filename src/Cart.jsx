@@ -1,11 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import { DashboardContext } from "./DashboardContext";
 import GadgetContext from "./GadgetContext";
-import CloseIcon from '@mui/icons-material/Close';
+import CloseIcon from "@mui/icons-material/Close";
 
 const Cart = () => {
   const gadgets = useContext(GadgetContext);
-  const { cart, setCart } = useContext(DashboardContext);
+  const { cart, setCart, formatNumber } = useContext(DashboardContext);
   const [totalCost, setTotalCost] = useState(0);
 
   // This codes shows total cost of items of cart
@@ -17,15 +17,16 @@ const Cart = () => {
       }
     });
     let cost = 0;
-    for(let i = 0; i < prices.length; i++) {
+    for (let i = 0; i < prices.length; i++) {
       cost += prices[i];
     }
-    setTotalCost(cost);
+
+    setTotalCost(formatNumber(cost));
   }, [cart, gadgets]);
 
   // Function for removing items from cart
   const removeFromCart = (item) => {
-    setCart((prevCart) => prevCart.filter(id => id !== item));
+    setCart((prevCart) => prevCart.filter((id) => id !== item));
   };
 
   return (
@@ -40,9 +41,16 @@ const Cart = () => {
         {gadgets.map((gadget) => {
           if (cart.includes(gadget.product_id)) {
             return (
-              <div key={gadgets.indexOf(gadget)} className="flex flex-row bg-white p-8 rounded-2xl gap-8">
-                <div className="w-52 h-32 overflow-hidden rounded-xl aspect-square flex justify-center items-center">
-                  <img className="w-full min-h-full" src={gadget?.product_image} alt="gadget-image" />
+              <div
+                key={gadgets.indexOf(gadget)}
+                className="flex flex-row gap-8 rounded-2xl bg-white p-8"
+              >
+                <div className="flex aspect-square h-32 w-52 items-center justify-center overflow-hidden rounded-xl">
+                  <img
+                    className="min-h-full w-full"
+                    src={gadget?.product_image}
+                    alt="gadget-image"
+                  />
                 </div>
                 <div className="flex flex-col">
                   <h1 className="text-2xl font-semibold">
@@ -50,11 +58,14 @@ const Cart = () => {
                   </h1>
                   <p className="text-lg opacity-60">{gadget?.description}</p>
                   <p className="text-xl font-semibold opacity-80">
-                    Price: ${gadget?.price}
+                    Price: {formatNumber(gadget?.price)}
                   </p>
                 </div>
-                <button onClick={() => removeFromCart(gadget.product_id)} className="border-red-500 border border-2px rounded-full h-fit ml-auto">
-                  <CloseIcon className="text-red-500"/>
+                <button
+                  onClick={() => removeFromCart(gadget.product_id)}
+                  className="border-2px ml-auto h-fit rounded-full border border-red-500"
+                >
+                  <CloseIcon className="text-red-500" />
                 </button>
               </div>
             );
