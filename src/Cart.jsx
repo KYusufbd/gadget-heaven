@@ -25,11 +25,7 @@ const Cart = () => {
 
   // Function for removing items from cart
   const removeFromCart = (item) => {
-    const updatedCart = [];
-    cart.map(i => {
-      !i === item && updatedCart.push(i);
-    })
-    setCart(updatedCart);
+    setCart((prevCart) => prevCart.filter(id => id !== item));
   };
 
   return (
