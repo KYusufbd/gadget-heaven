@@ -54,7 +54,7 @@ const Cart = () => {
                   </p>
                 </div>
                 <button onClick={() => removeFromCart(gadget.product_id)} className="border-red-500 border border-2px rounded-full h-fit ml-auto">
-                  <CloseIcon/>
+                  <CloseIcon className="text-red-500"/>
                 </button>
               </div>
             );
