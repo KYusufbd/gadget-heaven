@@ -11,7 +11,7 @@ const Details = () => {
   const [gadget, setGadget] = useState({});
   const [rating, setRating] = useState(2.1);
   const gadgets = useContext(GadgetContext);
-  const { cart, setCart, wishlist, setWishlist } = useContext(DashboardContext);
+  const { cart, setCart, wishlist, setWishlist, formatNumber } = useContext(DashboardContext);
   const p = useParams();
 
   // Testing purpuse only:
@@ -68,7 +68,7 @@ const Details = () => {
           <div className="flex flex-col gap-6">
             <h4 className="font-semibold">{gadget?.product_title}</h4>
             <p className="text-xl font-semibold">
-              {"Price: $ " + gadget?.price}
+              {"Price: " + formatNumber(gadget?.price)}
             </p>
             {gadget?.availability ? (
               <div className="w-max rounded-full border-2 border-green-600 bg-green-100 px-2 py-1 text-sm font-medium text-green-600">

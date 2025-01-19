@@ -2,11 +2,13 @@ import { useContext, useState } from "react";
 import { useEffect } from "react";
 import GadgetContext from "./GadgetContext";
 import { Link } from "react-router";
+import { DashboardContext } from "./DashboardContext";
 
 const GadgetCards = () => {
   const [categories, setCategories] = useState([]);
   const [display, setDisplay] = useState([]);
   const gadgets = useContext(GadgetContext);
+  const { formatNumber } =useContext(DashboardContext);
 
   useEffect(() => {
     const categs = [];
@@ -62,7 +64,7 @@ const GadgetCards = () => {
               <div className="stretch-h flex flex-col justify-between gap-4">
                 <div className="flex flex-col gap-3">
                   <h5 className="text-2xl font-semibold">{p.product_title}</h5>
-                  <p className="font-medium opacity-60">Price: {p.price}$</p>
+                  <p className="font-medium opacity-60">Price: {formatNumber(p.price)}</p>
                 </div>
                 <Link to={"details/" + p.product_id}>
                   <button className="btn btn-ghost border-secondary text-lg font-semibold text-secondary">

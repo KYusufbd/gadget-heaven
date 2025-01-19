@@ -5,7 +5,7 @@ import CloseIcon from "@mui/icons-material/Close";
 
 const Wishlist = () => {
   const gadgets = useContext(GadgetContext);
-  const { cart, setCart, wishlist, setWishlist } = useContext(DashboardContext);
+  const { cart, setCart, wishlist, setWishlist, formatNumber } = useContext(DashboardContext);
 
   // Add to cart function:
   function addToCart(itemId) {
@@ -18,6 +18,12 @@ const Wishlist = () => {
   const removeFromWishlist = (item) => {
     setWishlist((prevCart) => prevCart.filter((id) => id !== item));
   };
+
+  // Fuction for adding to cart and removing from wishlist:
+  const sendToCart = (item) => {
+    addToCart(item);
+    removeFromWishlist(item);
+  }
 
   return (
     <div className="flex w-full flex-col gap-8 bg-bgcol px-4 pb-16">
@@ -32,23 +38,23 @@ const Wishlist = () => {
                 key={gadgets.indexOf(gadget)}
                 className="flex flex-row gap-8 rounded-2xl bg-white p-8"
               >
-                <div className="flex aspect-square h-32 w-52 items-center justify-center overflow-hidden rounded-xl">
+                <div className="flex h-48 w-52 items-center justify-center overflow-hidden rounded-xl">
                   <img
                     className="min-h-full w-full"
                     src={gadget?.product_image}
                     alt="gadget-image"
                   />
                 </div>
-                <div className="flex flex-col">
+                <div className="flex flex-col gap-4">
                   <h1 className="text-2xl font-semibold">
                     {gadget?.product_title}
                   </h1>
                   <p className="text-lg opacity-60">{gadget?.description}</p>
                   <p className="text-xl font-semibold opacity-80">
-                    Price: ${gadget?.price}
+                    Price: {formatNumber(gadget?.price)}
                   </p>
                   <button
-                    onClick={() => addToCart(gadget.product_id)}
+                    onClick={() => sendToCart(gadget.product_id)}
                     className={`btn w-max rounded-full bg-primary px-5 py-3 text-lg font-bold text-white hover:bg-primary hover:opacity-70 ${+!gadget.availability && "btn-disabled"}`}
                   >
                     Add To Cart
