@@ -3,6 +3,7 @@ import { DashboardContext } from "./DashboardContext";
 import GadgetContext from "./GadgetContext";
 import CloseIcon from "@mui/icons-material/Close";
 import TuneIcon from "@mui/icons-material/Tune";
+import { Link } from "react-router";
 
 const Cart = () => {
   const gadgets = useContext(GadgetContext);
@@ -31,6 +32,12 @@ const Cart = () => {
     setCart((prevCart) => prevCart.filter((id) => id !== item));
   };
 
+  // Purchase function
+  const purchase = () => {
+    document.getElementById('my_modal_3').showModal();
+    setCart([]);
+  };
+
   return (
     <div className="flex w-full flex-col gap-8 bg-bgcol px-4 pb-16 pt-12">
       <div className="mx-auto flex w-full max-w-page-width flex-row flex-wrap items-center justify-between">
@@ -41,7 +48,7 @@ const Cart = () => {
             <button className="btn btn-outline rounded-full border-primary text-lg font-semibold text-primary hover:bg-primary hover:text-white">
               Sort by Price <TuneIcon />
             </button>
-            <button className="btn rounded-full bg-primary text-lg font-semibold text-white hover:text-txtcol">
+            <button onClick={()=> purchase()} className="btn rounded-full bg-primary text-lg font-semibold text-white hover:text-txtcol">
               Purchase
             </button>
           </div>
@@ -82,6 +89,17 @@ const Cart = () => {
           }
         })}
       </div>
+      <dialog id="my_modal_3" className="modal">
+        <div className="modal-box">
+          <form method="dialog">
+            <Link to="/">
+              <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+            </Link>
+          </form>
+          <h3 className="font-bold text-lg">Hello!</h3>
+          <p className="py-4">Press ESC key or click on ✕ button to close</p>
+        </div>
+      </dialog>
     </div>
   );
 };
