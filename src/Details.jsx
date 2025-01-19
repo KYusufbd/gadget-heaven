@@ -58,7 +58,7 @@ const Details = () => {
             it all!
           </p>
         </div>
-        <div className="mx-auto -mt-32 flex w-11/12 max-w-page-width flex-row gap-8 rounded-3xl bg-white p-8">
+        <div className="mx-auto -mt-32 flex w-11/12 max-w-page-width flex-row flex-wrap gap-8 rounded-3xl bg-white p-8">
           <div className="max-w-lg overflow-hidden rounded-2xl drop-shadow-xl">
             <img
               src={gadget?.product_image}

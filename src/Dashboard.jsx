@@ -12,14 +12,14 @@ const Dashboard = () => {
             it all!
           </p>
         </div>
-        <div className="mx-auto flex flex-row gap-6">
+        <div className="mx-auto flex flex-row flex-wrap gap-6">
           <NavLink to={"/dashboard/cart"}>
-            <button className="btn rounded-full bg-transparent px-16 py-3 font-medium text-white hover:font-bold hover:text-primary">
+            <button className="btn w-48 rounded-full bg-transparent py-3 font-medium text-white hover:font-bold hover:text-primary">
               Cart
             </button>
           </NavLink>
           <NavLink to={"/dashboard/wishlist"}>
-            <button className="btn rounded-full bg-transparent px-16 py-3 font-medium text-white hover:font-bold hover:text-primary">
+            <button className="btn w-48 rounded-full bg-transparent py-3 font-medium text-white hover:font-bold hover:text-primary">
               Wishlist
             </button>
           </NavLink>

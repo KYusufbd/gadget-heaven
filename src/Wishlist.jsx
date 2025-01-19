@@ -27,7 +27,7 @@ const Wishlist = () => {
   };
 
   return (
-    <div className="flex w-full flex-col gap-8 bg-bgcol px-4 pb-16">
+    <div className="flex w-full flex-col gap-8 bg-bgcol px-4 pb-16 pt-12">
       <div className="mx-auto flex w-full max-w-page-width flex-row justify-between">
         <h5 className="text-2xl font-bold">Wishlist</h5>
       </div>

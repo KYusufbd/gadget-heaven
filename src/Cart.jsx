@@ -33,11 +33,11 @@ const Cart = () => {
 
   return (
     <div className="flex w-full flex-col gap-8 bg-bgcol px-4 pb-16 pt-12">
-      <div className="mx-auto flex w-full max-w-page-width flex-row items-center justify-between">
+      <div className="mx-auto flex w-full max-w-page-width flex-row flex-wrap items-center justify-between">
         <h5 className="text-2xl font-bold">Cart</h5>
         <div className="flex flex-row flex-wrap items-center gap-6">
           <h5 className="text-2xl font-bold">Total cost: {totalCost}</h5>
-          <div className="flex flex-row gap-4">
+          <div className="flex flex-row flex-wrap gap-4">
             <button className="btn btn-outline rounded-full border-primary text-lg font-semibold text-primary hover:bg-primary hover:text-white">
               Sort by Price <TuneIcon />
             </button>
@@ -53,7 +53,7 @@ const Cart = () => {
             return (
               <div
                 key={gadgets.indexOf(gadget)}
-                className="flex flex-row gap-8 rounded-2xl bg-white p-8"
+                className="relative flex flex-row flex-wrap gap-8 rounded-2xl bg-white p-8"
               >
                 <div className="flex aspect-square h-32 w-52 items-center justify-center overflow-hidden rounded-xl">
                   <img
@@ -73,7 +73,7 @@ const Cart = () => {
                 </div>
                 <button
                   onClick={() => removeFromCart(gadget.product_id)}
-                  className="border-2px ml-auto h-fit rounded-full border border-red-500"
+                  className="border-2px absolute right-4 top-4 ml-auto h-fit rounded-full border border-red-500"
                 >
                   <CloseIcon className="text-red-500" />
                 </button>
