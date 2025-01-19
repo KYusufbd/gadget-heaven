@@ -11,7 +11,8 @@ const Details = () => {
   const [gadget, setGadget] = useState({});
   const [rating, setRating] = useState(2.1);
   const gadgets = useContext(GadgetContext);
-  const { cart, setCart, wishlist, setWishlist, formatNumber } = useContext(DashboardContext);
+  const { cart, setCart, wishlist, setWishlist, formatNumber } =
+    useContext(DashboardContext);
   const p = useParams();
 
   // Testing purpuse only:

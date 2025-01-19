@@ -8,7 +8,7 @@ const GadgetCards = () => {
   const [categories, setCategories] = useState([]);
   const [display, setDisplay] = useState([]);
   const gadgets = useContext(GadgetContext);
-  const { formatNumber } =useContext(DashboardContext);
+  const { formatNumber } = useContext(DashboardContext);
 
   useEffect(() => {
     const categs = [];
@@ -64,7 +64,9 @@ const GadgetCards = () => {
               <div className="stretch-h flex flex-col justify-between gap-4">
                 <div className="flex flex-col gap-3">
                   <h5 className="text-2xl font-semibold">{p.product_title}</h5>
-                  <p className="font-medium opacity-60">Price: {formatNumber(p.price)}</p>
+                  <p className="font-medium opacity-60">
+                    Price: {formatNumber(p.price)}
+                  </p>
                 </div>
                 <Link to={"details/" + p.product_id}>
                   <button className="btn btn-ghost border-secondary text-lg font-semibold text-secondary">

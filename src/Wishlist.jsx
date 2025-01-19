@@ -5,7 +5,8 @@ import CloseIcon from "@mui/icons-material/Close";
 
 const Wishlist = () => {
   const gadgets = useContext(GadgetContext);
-  const { cart, setCart, wishlist, setWishlist, formatNumber } = useContext(DashboardContext);
+  const { cart, setCart, wishlist, setWishlist, formatNumber } =
+    useContext(DashboardContext);
 
   // Add to cart function:
   function addToCart(itemId) {
@@ -23,14 +24,14 @@ const Wishlist = () => {
   const sendToCart = (item) => {
     addToCart(item);
     removeFromWishlist(item);
-  }
+  };
 
   return (
     <div className="flex w-full flex-col gap-8 bg-bgcol px-4 pb-16">
-      <div className="mx-auto flex w-page-width max-w-full flex-row justify-between">
+      <div className="mx-auto flex w-full max-w-page-width flex-row justify-between">
         <h5 className="text-2xl font-bold">Wishlist</h5>
       </div>
-      <div className="mx-auto flex max-w-page-width flex-col gap-6">
+      <div className="mx-auto flex w-full max-w-page-width flex-col gap-6">
         {gadgets.map((gadget) => {
           if (wishlist.includes(gadget.product_id)) {
             return (
