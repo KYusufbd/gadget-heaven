@@ -58,15 +58,15 @@ const Details = () => {
             it all!
           </p>
         </div>
-        <div className="mx-auto -mt-32 flex w-11/12 max-w-page-width flex-row flex-wrap gap-8 rounded-3xl bg-white p-8">
-          <div className="max-w-lg overflow-hidden rounded-2xl drop-shadow-xl">
+        <div className="mx-auto -mt-32 flex w-11/12 max-w-page-width flex-row flex-wrap gap-8 lg:gap-0 rounded-3xl bg-white lg:p-8 md:p-6 p-3">
+          <div className="flex items-center justify-center lg:w-5/12 overflow-hidden rounded-2xl drop-shadow-xl">
             <img
               src={gadget?.product_image}
               alt="gadget-image"
-              className="h-full min-w-full"
+              className="h-full"
             />
           </div>
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 lg:w-7/12 lg:pl-8">
             <h4 className="font-semibold">{gadget?.product_title}</h4>
             <p className="text-xl font-semibold">
               {"Price: " + formatNumber(gadget?.price)}
@@ -104,14 +104,14 @@ const Details = () => {
                   {rating}
                 </div>
               </div>
-              <div className="flex flex-row gap-4">
+              <div className="flex flex-row gap-2 md:gap-4">
                 <button
                   onClick={() => addToCart(gadget.product_id)}
-                  className={`btn w-max rounded-full bg-primary px-5 py-3 text-lg font-bold text-white hover:bg-primary hover:opacity-70 ${+!gadget.availability && "btn-disabled"}`}
+                  className={`btn w-max rounded-full bg-primary px-5 py-3 text-lg font-bold text-white hover:bg-primary hover:opacity-70 ${+!gadget?.availability && "btn-disabled"}`}
                 >
                   {!cart.includes(gadget?.product_id)
                     ? "Add To Cart"
-                    : "Already added!"}
+                    : "Already Added"}
                   <ShoppingCartOutlinedIcon />
                 </button>
                 <button
