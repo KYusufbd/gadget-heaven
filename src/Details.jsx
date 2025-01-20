@@ -107,7 +107,7 @@ const Details = () => {
               <div className="flex flex-row gap-2 md:gap-4">
                 <button
                   onClick={() => addToCart(gadget.product_id)}
-                  className={`btn w-max rounded-full bg-primary px-5 py-3 text-lg font-bold text-white hover:bg-primary hover:opacity-70 ${+!gadget?.availability && "btn-disabled"}`}
+                  className={`btn w-max rounded-full bg-primary px-5 py-3 text-lg font-bold text-white hover:bg-primary hover:opacity-70 ${!gadget?.availability && "btn-disabled"}`}
                 >
                   {!cart.includes(gadget?.product_id)
                     ? "Add To Cart"

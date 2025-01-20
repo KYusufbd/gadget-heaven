@@ -50,7 +50,7 @@ const Cart = () => {
             <button className="btn btn-outline rounded-full border-primary text-lg font-semibold text-primary hover:bg-primary hover:text-white">
               Sort by Price <TuneIcon />
             </button>
-            <button onClick={()=> purchase()} className="btn rounded-full bg-primary text-lg font-semibold text-white hover:text-txtcol">
+            <button onClick={()=> purchase()} className={`btn rounded-full bg-primary text-lg font-semibold text-white hover:text-txtcol ${totalCost === 0 && "btn-disabled"}`}>
               Purchase
             </button>
           </div>
