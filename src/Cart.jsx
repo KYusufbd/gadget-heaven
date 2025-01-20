@@ -9,6 +9,7 @@ const Cart = () => {
   const gadgets = useContext(GadgetContext);
   const { cart, setCart, formatNumber } = useContext(DashboardContext);
   const [totalCost, setTotalCost] = useState(0);
+  const [totalInModal, setTotalInModal] = useState(0);
 
   // This codes shows total cost of items of cart
   useEffect(() => {
@@ -23,8 +24,7 @@ const Cart = () => {
       cost += prices[i];
     }
 
-    setTotalCost(formatNumber(cost));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    setTotalCost(cost);
   }, [cart, gadgets]);
 
   // Function for removing items from cart
@@ -34,6 +34,8 @@ const Cart = () => {
 
   // Purchase function
   const purchase = () => {
+    const total = totalCost;
+    setTotalInModal(total);
     document.getElementById('my_modal_3').showModal();
     setCart([]);
   };
@@ -43,7 +45,7 @@ const Cart = () => {
       <div className="mx-auto flex w-full max-w-page-width flex-row flex-wrap items-center justify-between">
         <h5 className="text-2xl font-bold">Cart</h5>
         <div className="flex flex-row flex-wrap items-center gap-6">
-          <h5 className="text-2xl font-bold">Total cost: {totalCost}</h5>
+          <h5 className="text-2xl font-bold">Total cost: {formatNumber(totalCost)}</h5>
           <div className="flex flex-row flex-wrap gap-4">
             <button className="btn btn-outline rounded-full border-primary text-lg font-semibold text-primary hover:bg-primary hover:text-white">
               Sort by Price <TuneIcon />
@@ -89,15 +91,22 @@ const Cart = () => {
           }
         })}
       </div>
+      {/* Payment successful notification modal */}
       <dialog id="my_modal_3" className="modal">
-        <div className="modal-box">
-          <form method="dialog">
-            <Link to="/">
-              <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-            </Link>
-          </form>
-          <h3 className="font-bold text-lg">Hello!</h3>
-          <p className="py-4">Press ESC key or click on ✕ button to close</p>
+        <div className="modal-box flex flex-col items-center w-96 gap-6">
+          <div>
+            <img src="/successfull-icon.png" alt="successful-icon" />
+          </div>
+          <h3 className="font-bold text-2xl">Payment Successful</h3>
+          <div className="flex flex-col gap-4 w-full items-center">
+            <p className="font-medium text-base opacity-60">Thanks for purchasing.</p>
+            <p className="font-medium text-base opacity-60">Total: {formatNumber(totalInModal)}</p>
+            <form method="dialog" className="w-full">
+              <Link to="/">
+                <button className="btn btn-ghost btn-active rounded-full w-full">Close</button>
+              </Link>
+            </form>
+          </div>
         </div>
       </dialog>
     </div>
