@@ -93,7 +93,7 @@ const Cart = () => {
       </div>
       {/* Payment successful notification modal */}
       <dialog id="my_modal_3" className="modal">
-        <div className="modal-box flex flex-col items-center w-96 gap-6">
+        <div className="modal-box flex flex-col items-center text-center gap-6">
           <div>
             <img src="/successfull-icon.png" alt="successful-icon" />
           </div>
