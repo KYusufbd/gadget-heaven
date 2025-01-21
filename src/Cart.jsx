@@ -6,7 +6,7 @@ import TuneIcon from "@mui/icons-material/Tune";
 import { Link } from "react-router";
 
 const Cart = () => {
-  const gadgets = useContext(GadgetContext);
+  const items = useContext(GadgetContext);
   const { cart, setCart, formatNumber } = useContext(DashboardContext);
   const [totalCost, setTotalCost] = useState(0);
   const [totalInModal, setTotalInModal] = useState(0);
@@ -14,7 +14,7 @@ const Cart = () => {
   // This codes shows total cost of items of cart
   useEffect(() => {
     const prices = [];
-    gadgets.map((g) => {
+    items.map((g) => {
       if (cart.includes(g.product_id)) {
         prices.push(g.price);
       }
@@ -25,7 +25,7 @@ const Cart = () => {
     }
 
     setTotalCost(cost);
-  }, [cart, gadgets]);
+  }, [cart, items]);
 
   // Function for removing items from cart
   const removeFromCart = (item) => {
@@ -36,7 +36,7 @@ const Cart = () => {
   const sortByPrice = () => {
     const cartWithPrices = [];
     const sortedCart = [];
-    gadgets.map((g) => {
+    items.map((g) => {
       if (cart.includes(g.product_id)) {
         cartWithPrices.push({ id: g.product_id, price: g.price });
       }
@@ -83,10 +83,10 @@ const Cart = () => {
       </div>
       <div className="mx-auto flex w-full max-w-page-width flex-col gap-6">
         {cart.map((id) => {
-          const gadget = gadgets.find((item) => item.product_id === id);
+          const gadget = items.find((item) => item.product_id === id);
           return (
             <div
-              key={gadgets.indexOf(gadget)}
+              key={`cart-${id}`}
               className="relative flex flex-row flex-wrap gap-8 rounded-2xl bg-white p-8"
             >
               <div className="flex aspect-square h-32 w-52 items-center justify-center overflow-hidden rounded-xl">

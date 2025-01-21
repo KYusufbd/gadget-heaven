@@ -4,7 +4,7 @@ import { DashboardContext } from "./DashboardContext";
 import CloseIcon from "@mui/icons-material/Close";
 
 const Wishlist = () => {
-  const gadgets = useContext(GadgetContext);
+  const items = useContext(GadgetContext);
   const { cart, setCart, wishlist, setWishlist, formatNumber } =
     useContext(DashboardContext);
 
@@ -33,10 +33,10 @@ const Wishlist = () => {
       </div>
       <div className="mx-auto flex w-full max-w-page-width flex-col gap-6">
         {wishlist.map((id) => {
-          const gadget = gadgets.find((item) => item.product_id === id);
+          const gadget = items.find((item) => item.product_id === id);
           return (
             <div
-              key={gadgets.indexOf(gadget)}
+              key={`wishList-${id}`}
               className="flex flex-row gap-8 rounded-2xl bg-white p-8"
             >
               <div className="flex h-48 w-52 items-center justify-center overflow-hidden rounded-xl">
@@ -56,7 +56,7 @@ const Wishlist = () => {
                 </p>
                 <button
                   onClick={() => sendToCart(gadget.product_id)}
-                  className={`btn w-max rounded-full bg-primary px-5 py-3 text-lg font-bold text-white hover:bg-primary hover:opacity-70 ${+!gadget.availability && "btn-disabled"}`}
+                  className={`btn w-max rounded-full bg-primary px-5 py-3 text-lg font-bold text-white hover:bg-primary hover:opacity-70 ${+!gadget?.availability && "btn-disabled"}`}
                 >
                   Add To Cart
                 </button>
