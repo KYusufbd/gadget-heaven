@@ -8,15 +8,12 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 
 const Details = () => {
-  const [gadget, setGadget] = useState({});
-  const [rating, setRating] = useState(2.1);
+  const [gadget, setGadget] = useState();
+  const [rating, setRating] = useState();
   const gadgets = useContext(GadgetContext);
   const { cart, setCart, wishlist, setWishlist, formatNumber } =
     useContext(DashboardContext);
   const p = useParams();
-
-  // Testing purpuse only:
-  console.log(`Cart: ${cart}. Wishlist: ${wishlist}.`);
 
   // Add to cart function:
   function addToCart(itemId) {
