@@ -9,6 +9,7 @@ import Details from "./Details.jsx";
 import Dashboard from "./Dashboard.jsx";
 import Cart from "./Cart.jsx";
 import Wishlist from "./Wishlist.jsx";
+import Statistics from "./Statistics.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -19,7 +20,7 @@ createRoot(document.getElementById("root")).render(
           <Route path="/details/:gadgetId" element={<Details />} />
           <Route
             path="statistics"
-            element={<h1 className="text-5xl">This is statistics page!</h1>}
+            element={<Statistics />}
           />
           <Route path="/dashboard" element={<Dashboard />}>
             <Route path="/dashboard/cart" element={<Cart />} />

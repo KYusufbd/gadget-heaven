@@ -32,8 +32,8 @@ const Wishlist = () => {
         <h5 className="text-2xl font-bold">Wishlist</h5>
       </div>
       <div className="mx-auto flex w-full max-w-page-width flex-col gap-6">
-        {wishlist.map(id => {
-          const gadget = gadgets.find(item => item.product_id === id)
+        {wishlist.map((id) => {
+          const gadget = gadgets.find((item) => item.product_id === id);
           return (
             <div
               key={gadgets.indexOf(gadget)}

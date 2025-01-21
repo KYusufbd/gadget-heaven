@@ -36,13 +36,13 @@ const Cart = () => {
   const sortByPrice = () => {
     const cartWithPrices = [];
     const sortedCart = [];
-    gadgets.map(g => {
-      if(cart.includes(g.product_id)) {
-        cartWithPrices.push({id: g.product_id, price: g.price})
-      };
+    gadgets.map((g) => {
+      if (cart.includes(g.product_id)) {
+        cartWithPrices.push({ id: g.product_id, price: g.price });
+      }
     });
     cartWithPrices.sort((a, b) => b.price - a.price);
-    cartWithPrices.map(i => {
+    cartWithPrices.map((i) => {
       sortedCart.push(i.id);
     });
     setCart(sortedCart);
@@ -53,7 +53,7 @@ const Cart = () => {
   const purchase = () => {
     const total = totalCost;
     setTotalInModal(total);
-    document.getElementById('my_modal_3').showModal();
+    document.getElementById("my_modal_3").showModal();
     setCart([]);
   };
 
@@ -62,21 +62,29 @@ const Cart = () => {
       <div className="mx-auto flex w-full max-w-page-width flex-row flex-wrap items-center justify-between">
         <h5 className="text-2xl font-bold">Cart</h5>
         <div className="flex flex-row flex-wrap items-center gap-6">
-          <h5 className="text-2xl font-bold">Total Cost: {formatNumber(totalCost)}</h5>
+          <h5 className="text-2xl font-bold">
+            Total Cost: {formatNumber(totalCost)}
+          </h5>
           <div className="flex flex-row flex-wrap gap-4">
-            <button onClick={() => sortByPrice()} className="btn btn-outline rounded-full border-primary text-lg font-semibold text-primary hover:bg-primary hover:text-white">
+            <button
+              onClick={() => sortByPrice()}
+              className="btn btn-outline rounded-full border-primary text-lg font-semibold text-primary hover:bg-primary hover:text-white"
+            >
               Sort By Price <TuneIcon />
             </button>
-            <button onClick={()=> purchase()} className={`btn rounded-full bg-primary text-lg font-semibold text-white hover:text-txtcol ${totalCost === 0 && "btn-disabled"}`}>
+            <button
+              onClick={() => purchase()}
+              className={`btn rounded-full bg-primary text-lg font-semibold text-white hover:text-txtcol ${totalCost === 0 && "btn-disabled"}`}
+            >
               Purchase
             </button>
           </div>
         </div>
       </div>
       <div className="mx-auto flex w-full max-w-page-width flex-col gap-6">
-        {cart.map(id => {
-          const gadget = gadgets.find(item => item.product_id === id);
-          return(
+        {cart.map((id) => {
+          const gadget = gadgets.find((item) => item.product_id === id);
+          return (
             <div
               key={gadgets.indexOf(gadget)}
               className="relative flex flex-row flex-wrap gap-8 rounded-2xl bg-white p-8"
@@ -104,22 +112,28 @@ const Cart = () => {
                 <CloseIcon className="text-red-500" />
               </button>
             </div>
-          )
+          );
         })}
       </div>
       {/* Payment successful notification modal */}
       <dialog id="my_modal_3" className="modal">
-        <div className="modal-box flex flex-col items-center text-center gap-6">
+        <div className="modal-box flex flex-col items-center gap-6 text-center">
           <div>
             <img src="/successfull-icon.png" alt="successful-icon" />
           </div>
-          <h3 className="font-bold text-2xl">Payment Successful</h3>
-          <div className="flex flex-col gap-4 w-full items-center">
-            <p className="font-medium text-base opacity-60">Thanks for purchasing.</p>
-            <p className="font-medium text-base opacity-60">Total: {formatNumber(totalInModal)}</p>
+          <h3 className="text-2xl font-bold">Payment Successful</h3>
+          <div className="flex w-full flex-col items-center gap-4">
+            <p className="text-base font-medium opacity-60">
+              Thanks for purchasing.
+            </p>
+            <p className="text-base font-medium opacity-60">
+              Total: {formatNumber(totalInModal)}
+            </p>
             <form method="dialog" className="w-full">
               <Link to="/">
-                <button className="btn btn-ghost btn-active rounded-full w-full">Close</button>
+                <button className="btn btn-ghost btn-active w-full rounded-full">
+                  Close
+                </button>
               </Link>
             </form>
           </div>

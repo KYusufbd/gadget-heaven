@@ -58,8 +58,8 @@ const Details = () => {
             it all!
           </p>
         </div>
-        <div className="mx-auto -mt-32 flex w-11/12 max-w-page-width flex-row flex-wrap gap-8 lg:gap-0 rounded-3xl bg-white lg:p-8 md:p-6 p-3">
-          <div className="flex items-center justify-center lg:w-5/12 overflow-hidden rounded-2xl drop-shadow-xl">
+        <div className="mx-auto -mt-32 flex w-11/12 max-w-page-width flex-row flex-wrap gap-8 rounded-3xl bg-white p-3 md:p-6 lg:gap-0 lg:p-8">
+          <div className="flex items-center justify-center overflow-hidden rounded-2xl drop-shadow-xl lg:w-5/12">
             <img
               src={gadget?.product_image}
               alt="gadget-image"
