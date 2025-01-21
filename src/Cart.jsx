@@ -32,6 +32,23 @@ const Cart = () => {
     setCart((prevCart) => prevCart.filter((id) => id !== item));
   };
 
+  // Sort by price function
+  const sortByPrice = () => {
+    const cartWithPrices = [];
+    const sortedCart = [];
+    gadgets.map(g => {
+      if(cart.includes(g.product_id)) {
+        cartWithPrices.push({id: g.product_id, price: g.price})
+      };
+    });
+    cartWithPrices.sort((a, b) => b.price - a.price);
+    cartWithPrices.map(i => {
+      sortedCart.push(i.id);
+    });
+    setCart(sortedCart);
+    console.log(cart);
+  };
+
   // Purchase function
   const purchase = () => {
     const total = totalCost;
@@ -45,10 +62,10 @@ const Cart = () => {
       <div className="mx-auto flex w-full max-w-page-width flex-row flex-wrap items-center justify-between">
         <h5 className="text-2xl font-bold">Cart</h5>
         <div className="flex flex-row flex-wrap items-center gap-6">
-          <h5 className="text-2xl font-bold">Total cost: {formatNumber(totalCost)}</h5>
+          <h5 className="text-2xl font-bold">Total Cost: {formatNumber(totalCost)}</h5>
           <div className="flex flex-row flex-wrap gap-4">
-            <button className="btn btn-outline rounded-full border-primary text-lg font-semibold text-primary hover:bg-primary hover:text-white">
-              Sort by Price <TuneIcon />
+            <button onClick={() => sortByPrice()} className="btn btn-outline rounded-full border-primary text-lg font-semibold text-primary hover:bg-primary hover:text-white">
+              Sort By Price <TuneIcon />
             </button>
             <button onClick={()=> purchase()} className={`btn rounded-full bg-primary text-lg font-semibold text-white hover:text-txtcol ${totalCost === 0 && "btn-disabled"}`}>
               Purchase
@@ -57,38 +74,37 @@ const Cart = () => {
         </div>
       </div>
       <div className="mx-auto flex w-full max-w-page-width flex-col gap-6">
-        {gadgets.map((gadget) => {
-          if (cart.includes(gadget.product_id)) {
-            return (
-              <div
-                key={gadgets.indexOf(gadget)}
-                className="relative flex flex-row flex-wrap gap-8 rounded-2xl bg-white p-8"
-              >
-                <div className="flex aspect-square h-32 w-52 items-center justify-center overflow-hidden rounded-xl">
-                  <img
-                    className="min-h-full w-full"
-                    src={gadget?.product_image}
-                    alt="gadget-image"
-                  />
-                </div>
-                <div className="flex flex-col gap-4">
-                  <h1 className="text-2xl font-semibold">
-                    {gadget?.product_title}
-                  </h1>
-                  <p className="text-lg opacity-60">{gadget?.description}</p>
-                  <p className="text-xl font-semibold opacity-80">
-                    Price: {formatNumber(gadget?.price)}
-                  </p>
-                </div>
-                <button
-                  onClick={() => removeFromCart(gadget.product_id)}
-                  className="border-2px absolute right-4 top-4 ml-auto h-fit rounded-full border border-red-500"
-                >
-                  <CloseIcon className="text-red-500" />
-                </button>
+        {cart.map(id => {
+          const gadget = gadgets.find(item => item.product_id === id);
+          return(
+            <div
+              key={gadgets.indexOf(gadget)}
+              className="relative flex flex-row flex-wrap gap-8 rounded-2xl bg-white p-8"
+            >
+              <div className="flex aspect-square h-32 w-52 items-center justify-center overflow-hidden rounded-xl">
+                <img
+                  className="min-h-full w-full"
+                  src={gadget?.product_image}
+                  alt="gadget-image"
+                />
               </div>
-            );
-          }
+              <div className="flex flex-col gap-4">
+                <h1 className="text-2xl font-semibold">
+                  {gadget?.product_title}
+                </h1>
+                <p className="text-lg opacity-60">{gadget?.description}</p>
+                <p className="text-xl font-semibold opacity-80">
+                  Price: {formatNumber(gadget?.price)}
+                </p>
+              </div>
+              <button
+                onClick={() => removeFromCart(gadget.product_id)}
+                className="border-2px absolute right-4 top-4 ml-auto h-fit rounded-full border border-red-500"
+              >
+                <CloseIcon className="text-red-500" />
+              </button>
+            </div>
+          )
         })}
       </div>
       {/* Payment successful notification modal */}
