@@ -18,10 +18,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
           <Route path="/details/:gadgetId" element={<Details />} />
-          <Route
-            path="statistics"
-            element={<Statistics />}
-          />
+          <Route path="statistics" element={<Statistics />} />
           <Route path="/dashboard" element={<Dashboard />}>
             <Route path="/dashboard/cart" element={<Cart />} />
             <Route path="/dashboard/wishlist" element={<Wishlist />} />
