@@ -98,7 +98,7 @@ const Details = () => {
                   readOnly
                 />
                 <div className="rounded-full bg-bgcol px-4 py-2 text-sm font-medium opacity-80">
-                  {rating}
+                  {gadget?.rating}
                 </div>
               </div>
               <div className="flex flex-row gap-2 md:gap-4">
