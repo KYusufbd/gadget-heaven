@@ -128,7 +128,13 @@ const Details = () => {
 
 export default Details;
 
-console.log("You have to remove lines below when the project is complete!");
+console.log(`
+  You have to perform these tasks before submitting:
+  1. Remove the lines below
+  2. Fix the problem in the MUI component Star.
+  3. Use nested layout to display category.
+  Status: Now time to fix the MUI component
+  `);
 /*
 Development purpose only:
 An object isntance:
