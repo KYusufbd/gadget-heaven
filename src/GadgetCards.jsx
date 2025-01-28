@@ -80,7 +80,7 @@ const GadgetCards = ({category}) => {
                     Price: {formatNumber(p.price)}
                   </p>
                 </div>
-                <Link to={"details/" + p.product_id}>
+                <Link to={"/details/" + p.product_id}>
                   <button className="btn btn-ghost border-secondary text-lg font-semibold text-secondary">
                     View Details
                   </button>
