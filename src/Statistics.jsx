@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import {
   ComposedChart,
-  Line,
   Area,
   Bar,
+  Scatter,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -52,7 +52,7 @@ const Statistics = () => {
                     <Legend />
                     <Area type="monotone" dataKey="price" fill="#8884d8" stroke="#8884d8" />
                     <Bar dataKey="price" barSize={20} fill="#413ea0" />
-                    <Line type="monotone" dataKey="rating" stroke="#ff7300" />
+                    <Scatter dataKey="rating" fill='red'/>
                     </ComposedChart>
             </ ResponsiveContainer>
         </div>

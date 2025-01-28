@@ -126,6 +126,16 @@ export default Details;
 console.log(`
   You have to perform these tasks before submitting:
   * Remove the lines below
+  * Disable heart button on Details page after clicking once.
+  * Add one more route with meaningful content.
+  * Add a 404 page
+  * Provide documentation in Readme file
+  * Show toast on adding to cart or wishlist with different messages.
+  * use useLocation hook
+  * use useNavigate hook
+  * use favicon
+  * Set maximum price of the cart
+  * Show error toast when trying to add items from wishlist to the cart if the limit is crossed.
   
   Performed tasks:
   * Fix the problem in the MUI component Star.
