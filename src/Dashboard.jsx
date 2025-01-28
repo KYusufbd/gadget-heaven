@@ -1,6 +1,13 @@
-import { NavLink, Outlet } from "react-router";
+import { useEffect } from "react";
+import { NavLink, Outlet, useNavigate } from "react-router";
 
 const Dashboard = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    navigate('/dashboard/cart');
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
   return (
     <div className="dashboard w-full bg-bgcol">
       <div className="flex flex-col gap-8 bg-primary px-5 py-8 text-center text-white">
