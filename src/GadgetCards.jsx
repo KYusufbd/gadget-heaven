@@ -11,7 +11,8 @@ const GadgetCards = ({category}) => {
   const gadgets = useContext(GadgetContext);
   const { formatNumber } = useContext(DashboardContext);
 
-  useEffect(() => {
+  // Function to find all categories:
+  const findAllCategories = () => {
     const categs = [];
     gadgets.map((e) => {
       if (!categs.includes(e.category)) {
@@ -19,13 +20,14 @@ const GadgetCards = ({category}) => {
       }
     });
     setCategories(categs);
-    setDisplay(gadgets);
-  }, [gadgets]);
+  }
 
-  // Filter by category function:
-  const filterByCategory = (c) => {
-    setDisplay(gadgets.filter((g) => g.category === c));
-  };
+  // Code for finding all categories and setting displayable gadgets:
+  useEffect(() => {
+    findAllCategories();
+    category? setDisplay(gadgets.filter((g) => g.category === category)) : setDisplay(gadgets);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [category, gadgets])
 
   // This code is to scroll to top when the route is changed.
   useEffect(() => {
@@ -35,21 +37,25 @@ const GadgetCards = ({category}) => {
   return (
     <div className="mx-auto grid max-w-page-width grid-cols-2 gap-4 py-8 md:grid-cols-3 md:gap-6 lg:grid-cols-4">
       <div className="col-span-2 flex flex-col gap-6 rounded-2xl bg-white p-6 md:col-span-1">
-        <button
-          onClick={() => setDisplay(gadgets)}
-          className="btn btn-ghost w-full bg-bgcol text-lg font-medium hover:bg-secondary hover:font-extrabold hover:text-white"
-        >
-          All Product
-        </button>
+        <Link to='/'>
+          <button
+            className="btn btn-ghost w-full bg-bgcol text-lg font-medium hover:bg-secondary hover:font-extrabold hover:text-white"
+          >
+            All Product
+          </button>
+        </Link>
         {categories.map((e) => {
           return (
-            <button
-              onClick={() => filterByCategory(e)}
-              className="btn btn-ghost w-full bg-bgcol text-lg font-medium hover:bg-secondary hover:font-extrabold hover:text-white"
+            <Link
+              to={`/category/${e}`}
               key={categories.indexOf(e)}
             >
-              {e}
-            </button>
+              <button
+                className="btn btn-ghost w-full bg-bgcol text-lg font-medium hover:bg-secondary hover:font-extrabold hover:text-white"
+              >
+                {e}
+              </button>
+            </Link>
           );
         })}
       </div>

@@ -125,13 +125,13 @@ export default Details;
 
 console.log(`
   You have to perform these tasks before submitting:
-  Remove the lines below
-  Use nested layout to display category.
+  * Remove the lines below
   
   Performed tasks:
-  Fix the problem in the MUI component Star.
+  * Fix the problem in the MUI component Star.
+  * Use nested layout to display category.
   
-  Status: Now time to use nested layout to display category.
+  Status: Now time to jump find the ramaining requirements to perform.
   `);
 /*
 Development purpose only:

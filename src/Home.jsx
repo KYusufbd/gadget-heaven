@@ -3,8 +3,8 @@ import Banner from "./Banner";
 import GadgetCards from "./GadgetCards";
 
 const Home = () => {
-
   const p = useParams();
+  
   return (
     <>
       <header className="w-full bg-bgcol">
