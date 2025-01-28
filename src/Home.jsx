@@ -9,7 +9,7 @@ const Home = () => {
     <>
       <header className="w-full bg-bgcol">
         <Banner />
-        <GadgetCards category="p.category"/>
+        <GadgetCards category={p.category}/>
       </header>
     </>
   );
