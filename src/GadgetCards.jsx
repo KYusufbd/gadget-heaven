@@ -3,8 +3,9 @@ import { useEffect } from "react";
 import GadgetContext from "./GadgetContext";
 import { Link } from "react-router";
 import { DashboardContext } from "./DashboardContext";
+import PropTypes from "prop-types";
 
-const GadgetCards = () => {
+const GadgetCards = ({category}) => {
   const [categories, setCategories] = useState([]);
   const [display, setDisplay] = useState([]);
   const gadgets = useContext(GadgetContext);
@@ -86,5 +87,9 @@ const GadgetCards = () => {
     </div>
   );
 };
+
+GadgetCards.propTypes = {
+  category: PropTypes.string
+}
 
 export default GadgetCards;

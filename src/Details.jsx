@@ -131,7 +131,7 @@ console.log(`
   Performed tasks:
   Fix the problem in the MUI component Star.
   
-  Status: Now time to fix the MUI component
+  Status: Now time to use nested layout to display category.
   `);
 /*
 Development purpose only:
