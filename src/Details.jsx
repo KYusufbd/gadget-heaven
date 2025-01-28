@@ -2,14 +2,14 @@ import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import GadgetContext from "./GadgetContext";
 import { DashboardContext } from "./DashboardContext";
-import { Rating } from "@mui/material";
 import StarHalfIcon from "@mui/icons-material/StarHalf";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import { Rating } from '@smastrom/react-rating'
+import '@smastrom/react-rating/style.css'
 
 const Details = () => {
   const [gadget, setGadget] = useState();
-  const [rating, setRating] = useState();
   const gadgets = useContext(GadgetContext);
   const { cart, setCart, wishlist, setWishlist, formatNumber } =
     useContext(DashboardContext);
@@ -37,10 +37,6 @@ const Details = () => {
   useEffect(() => {
     scrollTo(0, 0);
   }, []);
-
-  useEffect(() => {
-    setRating(gadget?.rating);
-  }, [gadget]);
 
   return (
     <div>
@@ -92,9 +88,8 @@ const Details = () => {
               </h6>
               <div className="flex flex-row items-center gap-4">
                 <Rating
-                  name="half-rating-read"
-                  precision={0.1}
-                  value={rating}
+                  style={{ maxWidth: 180 }}
+                  value={gadget?.rating}
                   readOnly
                 />
                 <div className="rounded-full bg-bgcol px-4 py-2 text-sm font-medium opacity-80">
@@ -130,9 +125,12 @@ export default Details;
 
 console.log(`
   You have to perform these tasks before submitting:
-  1. Remove the lines below
-  2. Fix the problem in the MUI component Star.
-  3. Use nested layout to display category.
+  Remove the lines below
+  Use nested layout to display category.
+  
+  Performed tasks:
+  Fix the problem in the MUI component Star.
+  
   Status: Now time to fix the MUI component
   `);
 /*
