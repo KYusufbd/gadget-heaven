@@ -4,6 +4,7 @@ import GadgetContext from "./GadgetContext";
 import CloseIcon from "@mui/icons-material/Close";
 import TuneIcon from "@mui/icons-material/Tune";
 import { useNavigate } from "react-router";
+import { useParams } from "react-router";
 
 const Cart = () => {
   const items = useContext(GadgetContext);
@@ -57,9 +58,12 @@ const Cart = () => {
     setCart([]);
   };
 
-  // Navigate to home page:
+  // Navigate function
   const navigate = useNavigate();
 
+  // Testing purpose only:
+  const p = useParams();
+  console.log(p);
 
   return (
     <div className="flex w-full flex-col gap-8 bg-bgcol px-4 pb-16 pt-12">

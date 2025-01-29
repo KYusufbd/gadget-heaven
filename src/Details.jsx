@@ -7,6 +7,7 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
+import { Helmet } from "react-helmet-async";
 
 const Details = () => {
   const [gadget, setGadget] = useState();
@@ -40,6 +41,9 @@ const Details = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>{gadget?.product_title + " | Gadget Heaven"}</title>
+      </Helmet>
       <div className="w-full bg-bgcol pb-24">
         <div className="bg-primary px-5 pb-48 pt-8">
           <h1 className="text-center text-3xl font-bold text-white">

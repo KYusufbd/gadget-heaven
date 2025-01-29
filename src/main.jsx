@@ -23,14 +23,14 @@ createRoot(document.getElementById("root")).render(
             <Route index element={<Home />} />
             <Route path="/category/:category" element={<Home />} />
             <Route path="/details/:gadgetId" element={<Details />} />
-            <Route path="statistics" element={<Statistics />} />
+            <Route path="/statistics" element={<Statistics />} />
             <Route path="/dashboard" element={<Dashboard />}>
               <Route path="/dashboard/cart" element={<Cart />} />
               <Route path="/dashboard/wishlist" element={<Wishlist />} />
             </Route>
             <Route path="/about" element={<About />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
-          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </HelmetProvider>
