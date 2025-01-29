@@ -125,23 +125,21 @@ export default Details;
 
 console.log(`
   You have to perform these tasks before submitting:
-  * Add a 404 page
-  * Provide documentation in Readme file
-  * Show toast on adding to cart or wishlist with different messages.
   * use useLocation hook
   * use useNavigate hook
   * use favicon
+  * Show toast on adding to cart or wishlist with different messages.
   * Set maximum price of the cart
   * Show error toast when trying to add items from wishlist to the cart if the limit is crossed.
+  * Provide documentation in Readme file
   * Remove the these lines and the lines below
   
   Performed tasks:
+  * Add a 404 page
   * Add one more route with meaningful content.
   * Disable heart button on Details page after clicking once.
   * Fix the problem in the MUI component Star.
   * Use nested layout to display category.
-  
-  Status: Now time to jump find the ramaining requirements to perform.
   `);
 /*
 Development purpose only:

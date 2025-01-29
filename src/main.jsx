@@ -11,6 +11,7 @@ import Cart from "./Cart.jsx";
 import Wishlist from "./Wishlist.jsx";
 import Statistics from "./Statistics.jsx";
 import About from "./About.jsx";
+import NotFound from "./NotFound.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -27,6 +28,7 @@ createRoot(document.getElementById("root")).render(
           </Route>
           <Route path="/about" element={<About />} />
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

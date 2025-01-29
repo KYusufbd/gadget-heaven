@@ -33,6 +33,11 @@ const Navbar = () => {
             <li>
               <NavLink to="/dashboard">Dashboard</NavLink>
             </li>
+            <li>
+              <NavLink to="/about" className="hover:underline">
+                About
+              </NavLink>
+            </li>
           </ul>
         </div>
         <Link to="/" className="text-xl font-bold">

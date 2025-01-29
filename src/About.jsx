@@ -2,7 +2,7 @@ import CheckIcon from "@mui/icons-material/Check";
 
 const About = () => {
   return (
-    <div className="dashboard w-full bg-bgcol">
+    <div className="w-full bg-bgcol">
       <div className="flex flex-col gap-6 bg-primary px-5 py-12 text-center text-white">
         <div className="flex flex-col gap-4">
           <h1 className="text-3xl font-bold">About Gadget Heaven</h1>

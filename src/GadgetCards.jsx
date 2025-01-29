@@ -54,7 +54,10 @@ const GadgetCards = ({ category }) => {
           );
         })}
       </div>
-      <div className="col-span-2 grid grid-cols-1 gap-4 md:grid-cols-2 lg:col-span-3 lg:grid-cols-3">
+      <div
+        id="gadget-section"
+        className="col-span-2 grid grid-cols-1 gap-4 md:grid-cols-2 lg:col-span-3 lg:grid-cols-3"
+      >
         {display.map((p) => {
           return (
             <div
