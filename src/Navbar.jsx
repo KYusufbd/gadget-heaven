@@ -1,10 +1,14 @@
 import { Link, NavLink } from "react-router";
 import { BsCart3 } from "react-icons/bs";
 import { MdFavoriteBorder } from "react-icons/md";
+import { useLocation } from "react-router";
 
 const Navbar = () => {
+  const location = useLocation();
+  const path = location.pathname;
+
   return (
-    <nav className="max-w[1540px] navbar mx-auto my-6 w-11/12 items-center">
+    <nav className={`max-w[1540px] navbar mx-auto mt-6 ${path === '/' ? "-mb-28 text-white" : "mb-6"} w-11/12 items-center z-10`}>
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -68,12 +72,12 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className="navbar-end flex gap-4">
+      <div className="navbar-end flex gap-4 text-txtcol">
         <Link to={"/dashboard/cart"}>
-          <BsCart3 className="btn btn-ghost rounded-full p-2 text-5xl outline outline-2 outline-gray-100" />
+          <BsCart3 className="btn btn-ghost rounded-full p-2 text-5xl outline outline-2 outline-gray-100 bg-white" />
         </Link>
         <Link to={"/dashboard/wishlist"}>
-          <MdFavoriteBorder className="btn btn-ghost rounded-full p-2 text-5xl outline outline-2 outline-gray-100" />
+          <MdFavoriteBorder className="btn btn-ghost rounded-full p-2 text-5xl outline outline-2 outline-gray-100 bg-white" />
         </Link>
       </div>
     </nav>
