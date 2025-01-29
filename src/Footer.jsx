@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="w-full bg-white py-6 text-txtcol">
+    <footer className="w-full bg-white py-12 text-txtcol">
       <div className="flex w-full flex-col items-center gap-3 pb-8">
         <h3 className="text-3xl font-bold">Gadget Heaven</h3>
         <p className="text-center font-medium opacity-60">
@@ -8,7 +8,7 @@ const Footer = () => {
         </p>
       </div>
       <hr className="mx-auto max-w-banner-width" />
-      <div className="mx-auto flex max-w-page-width flex-row flex-wrap justify-around gap-6 p-10 text-base-content">
+      <div className="mx-auto flex max-w-page-width flex-row flex-wrap justify-around gap-6 px-6 pt-6 text-base-content">
         <nav className="flex w-44 flex-col items-center">
           <h6 className="footer-title">Services</h6>
           <a className="link-hover link">Product Support</a>

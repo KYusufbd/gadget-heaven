@@ -56,6 +56,11 @@ const Navbar = () => {
               Dashboard
             </NavLink>
           </li>
+          <li>
+            <NavLink to="/about" className="hover:underline">
+              About
+            </NavLink>
+          </li>
         </ul>
       </div>
       <div className="navbar-end flex gap-4">

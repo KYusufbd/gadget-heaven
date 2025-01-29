@@ -5,8 +5,8 @@ import { DashboardContext } from "./DashboardContext";
 import StarHalfIcon from "@mui/icons-material/StarHalf";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
-import { Rating } from '@smastrom/react-rating'
-import '@smastrom/react-rating/style.css'
+import { Rating } from "@smastrom/react-rating";
+import "@smastrom/react-rating/style.css";
 
 const Details = () => {
   const [gadget, setGadget] = useState();
@@ -108,7 +108,7 @@ const Details = () => {
                 </button>
                 <button
                   onClick={() => addToWishlist(gadget.product_id)}
-                  className="btn rounded-full bg-transparent p-3 outline outline-1"
+                  className={`btn rounded-full bg-transparent p-3 outline outline-1 ${wishlist.includes(gadget?.product_id) ? "btn-disabled" : ""}`}
                 >
                   <FavoriteBorderOutlinedIcon />
                 </button>
@@ -125,9 +125,6 @@ export default Details;
 
 console.log(`
   You have to perform these tasks before submitting:
-  * Remove the lines below
-  * Disable heart button on Details page after clicking once.
-  * Add one more route with meaningful content.
   * Add a 404 page
   * Provide documentation in Readme file
   * Show toast on adding to cart or wishlist with different messages.
@@ -136,8 +133,11 @@ console.log(`
   * use favicon
   * Set maximum price of the cart
   * Show error toast when trying to add items from wishlist to the cart if the limit is crossed.
+  * Remove the these lines and the lines below
   
   Performed tasks:
+  * Add one more route with meaningful content.
+  * Disable heart button on Details page after clicking once.
   * Fix the problem in the MUI component Star.
   * Use nested layout to display category.
   

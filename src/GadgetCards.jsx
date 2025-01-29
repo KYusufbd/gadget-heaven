@@ -5,7 +5,7 @@ import { Link } from "react-router";
 import { DashboardContext } from "./DashboardContext";
 import PropTypes from "prop-types";
 
-const GadgetCards = ({category}) => {
+const GadgetCards = ({ category }) => {
   const [categories, setCategories] = useState([]);
   const [display, setDisplay] = useState([]);
   const gadgets = useContext(GadgetContext);
@@ -20,14 +20,16 @@ const GadgetCards = ({category}) => {
       }
     });
     setCategories(categs);
-  }
+  };
 
   // Code for finding all categories and setting displayable gadgets:
   useEffect(() => {
     findAllCategories();
-    category? setDisplay(gadgets.filter((g) => g.category === category)) : setDisplay(gadgets);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [category, gadgets])
+    category
+      ? setDisplay(gadgets.filter((g) => g.category === category))
+      : setDisplay(gadgets);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [category, gadgets]);
 
   // This code is to scroll to top when the route is changed.
   useEffect(() => {
@@ -37,22 +39,15 @@ const GadgetCards = ({category}) => {
   return (
     <div className="mx-auto grid max-w-page-width grid-cols-2 gap-4 py-8 md:grid-cols-3 md:gap-6 lg:grid-cols-4">
       <div className="col-span-2 flex flex-col gap-6 rounded-2xl bg-white p-6 md:col-span-1">
-        <Link to='/'>
-          <button
-            className="btn btn-ghost w-full bg-bgcol text-lg font-medium hover:bg-secondary hover:font-extrabold hover:text-white"
-          >
+        <Link to="/">
+          <button className="btn btn-ghost w-full bg-bgcol text-lg font-medium hover:bg-secondary hover:font-extrabold hover:text-white">
             All Product
           </button>
         </Link>
         {categories.map((e) => {
           return (
-            <Link
-              to={`/category/${e}`}
-              key={categories.indexOf(e)}
-            >
-              <button
-                className="btn btn-ghost w-full bg-bgcol text-lg font-medium hover:bg-secondary hover:font-extrabold hover:text-white"
-              >
+            <Link to={`/category/${e}`} key={categories.indexOf(e)}>
+              <button className="btn btn-ghost w-full bg-bgcol text-lg font-medium hover:bg-secondary hover:font-extrabold hover:text-white">
                 {e}
               </button>
             </Link>
@@ -95,7 +90,7 @@ const GadgetCards = ({category}) => {
 };
 
 GadgetCards.propTypes = {
-  category: PropTypes.string
-}
+  category: PropTypes.string,
+};
 
 export default GadgetCards;
