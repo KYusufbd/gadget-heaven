@@ -8,7 +8,7 @@ const Navbar = () => {
   const path = location.pathname;
 
   return (
-    <nav className={`max-w[1540px] navbar mx-auto mt-6 ${path === '/' ? "-mb-28 text-white" : "mb-6"} w-11/12 items-center z-10`}>
+    <nav className={`max-w-page-width navbar mx-auto mt-6 ${path === '/' ? "-mb-28 text-white" : "mb-6"} px-4 w-11/12 items-center z-10`}>
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

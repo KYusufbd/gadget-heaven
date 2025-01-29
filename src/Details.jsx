@@ -125,9 +125,7 @@ export default Details;
 
 console.log(`
   You have to perform these tasks before submitting:
-  * use useLocation hook
-  * use useNavigate hook
-  * use favicon
+  * Use dynamic title for each page.
   * Show toast on adding to cart or wishlist with different messages.
   * Set maximum price of the cart
   * Show error toast when trying to add items from wishlist to the cart if the limit is crossed.
@@ -135,6 +133,9 @@ console.log(`
   * Remove the these lines and the lines below
   
   Performed tasks:
+  * use favicon
+  * use useNavigate hook
+  * use useLocation hook
   * Add a 404 page
   * Add one more route with meaningful content.
   * Disable heart button on Details page after clicking once.

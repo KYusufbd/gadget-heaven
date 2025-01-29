@@ -3,7 +3,7 @@ import { DashboardContext } from "./DashboardContext";
 import GadgetContext from "./GadgetContext";
 import CloseIcon from "@mui/icons-material/Close";
 import TuneIcon from "@mui/icons-material/Tune";
-import { Link } from "react-router";
+import { useNavigate } from "react-router";
 
 const Cart = () => {
   const items = useContext(GadgetContext);
@@ -56,6 +56,10 @@ const Cart = () => {
     document.getElementById("my_modal_3").showModal();
     setCart([]);
   };
+
+  // Navigate to home page:
+  const navigate = useNavigate();
+
 
   return (
     <div className="flex w-full flex-col gap-8 bg-bgcol px-4 pb-16 pt-12">
@@ -130,11 +134,9 @@ const Cart = () => {
               Total: {formatNumber(totalInModal)}
             </p>
             <form method="dialog" className="w-full">
-              <Link to="/">
-                <button className="btn btn-ghost btn-active w-full rounded-full">
+                <button onClick={() => navigate('/')} className="btn btn-ghost btn-active w-full rounded-full">
                   Close
                 </button>
-              </Link>
             </form>
           </div>
         </div>
