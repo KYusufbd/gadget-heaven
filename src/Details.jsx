@@ -8,6 +8,7 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import { Helmet } from "react-helmet-async";
+import { ToastContainer, toast } from "react-toastify";
 
 const Details = () => {
   const [gadget, setGadget] = useState();
@@ -20,6 +21,10 @@ const Details = () => {
   function addToCart(itemId) {
     if (!cart.includes(itemId)) {
       setCart([...cart, itemId]);
+      toast('Successfully added to Cart!')
+    }
+    else {
+      toast('This item is already in the cart!')
     }
   }
 
@@ -27,6 +32,7 @@ const Details = () => {
   function addToWishlist(itemId) {
     if (!wishlist.includes(itemId)) {
       setWishlist([...wishlist, itemId]);
+      toast('Successfully added to wishlist!')
     }
   }
 
@@ -121,6 +127,9 @@ const Details = () => {
           </div>
         </div>
       </div>
+      <ToastContainer
+        position="top-center"
+      />
     </div>
   );
 };
@@ -129,14 +138,14 @@ export default Details;
 
 console.log(`
   You have to perform these tasks before submitting:
-  * Use dynamic title for each page.
-  * Show toast on adding to cart or wishlist with different messages.
   * Set maximum price of the cart
   * Show error toast when trying to add items from wishlist to the cart if the limit is crossed.
   * Provide documentation in Readme file
   * Remove the these lines and the lines below
   
   Performed tasks:
+  * Show toast on adding to cart or wishlist with different messages.
+  * Use dynamic title for each page.
   * use favicon
   * use useNavigate hook
   * use useLocation hook
