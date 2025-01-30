@@ -23,7 +23,7 @@ const Wishlist = () => {
           return (
             <div
               key={`wishList-${id}`}
-              className="flex flex-row gap-8 rounded-2xl bg-white p-8"
+              className="flex flex-row flex-wrap gap-8 rounded-2xl bg-white p-8"
             >
               <div className="flex h-48 w-52 items-center justify-center overflow-hidden rounded-xl">
                 <img
