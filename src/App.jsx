@@ -15,7 +15,7 @@ function App() {
       .then((data) => setGadgets(data));
   }, []);
 
-  const [cart, setCart] = useState(["P004", "P007"]);
+  const [cart, setCart] = useState(["P003", "P007"]);
   const [wishlist, setWishlist] = useState(["P002", "P009"]);
   const [totalCost, setTotalCost] = useState(0);
   const maximumPrice = 2500;
@@ -40,7 +40,7 @@ function App() {
           removeFromWishlist(itemId);
         }
       } else {
-        toast("Sorry! adding this item will exceed maximum price");
+        toast("Sorry, adding this item will exceed maximum price!");
       }
     } else {
       toast("This item is already in the cart!");

@@ -47,7 +47,6 @@ const Cart = () => {
       sortedCart.push(i.id);
     });
     setCart(sortedCart);
-    console.log(cart);
   };
 
   // Purchase function

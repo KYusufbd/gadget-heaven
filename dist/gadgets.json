@@ -1,0 +1,339 @@
+[
+  {
+    "product_id": "P001",
+    "product_title": "Apple iPhone 15 Pro Max",
+    "product_image": "https://img.freepik.com/free-photo/phone-screen-with-abstract-marble-aesthetic_53876-145553.jpg?t=st=1730978808~exp=1730982408~hmac=aace8b7e5e807f43dbe5eb82546585d7c219b5b42723b1bc791be8a9be00589b&w=740",
+    "category": "Smartphones",
+    "price": 1299,
+    "description": "Experience the ultimate smartphone with the iPhone 15 Pro Max.",
+    "specification": [
+      "6.7-inch Super Retina XDR display",
+      "A17 Bionic chip",
+      "Triple-camera system",
+      "LiDAR Scanner",
+      "Up to 2TB storage"
+    ],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": "P002",
+    "product_title": "Samsung Galaxy Z Fold5",
+    "product_image": "https://img.freepik.com/premium-photo/all-screen-smartphone-with-icon-set-isolated-white-3d-render_118047-2162.jpg?w=740",
+    "category": "Smartphones",
+    "price": 1799,
+    "description": "The Samsung Galaxy Z Fold5 brings foldable technology to the next level.",
+    "specification": [
+      "7.6-inch foldable Dynamic AMOLED display",
+      "Snapdragon 8 Gen 2",
+      "Dual battery with fast charging",
+      "256GB to 1TB storage"
+    ],
+    "availability": true,
+    "rating": 4.6
+  },
+  {
+    "product_id": "P003",
+    "product_title": "Sony WH-1000XM5 Wireless Headphones",
+    "product_image": "https://img.freepik.com/free-photo/headphones-displayed-against-dark-background_157027-4466.jpg?t=st=1730981675~exp=1730985275~hmac=6bb56ffacee21d77e8cc07f7c7872678e4ffbb24d71c5af7c943a6e6cc29fe72&w=900",
+    "category": "Audio",
+    "price": 399,
+    "description": "Sony's WH-1000XM5 offers best-in-class noise cancellation and sound quality.",
+    "specification": [
+      "30 hours battery life",
+      "Adaptive sound control",
+      "Hi-Res audio certified",
+      "Multipoint Bluetooth connection"
+    ],
+    "availability": true,
+    "rating": 4.9
+  },
+  {
+    "product_id": "P004",
+    "product_title": "Apple MacBook Pro 16-inch",
+    "product_image": "https://img.freepik.com/free-photo/market-trends-concept-with-laptop_23-2150372404.jpg?t=st=1730979112~exp=1730982712~hmac=c617673fd0f588b158095a146874f6ff6efbb3efeb94dcb341e085e7d7e6a7c8&w=740",
+    "category": "Laptops",
+    "price": 2499,
+    "description": "The powerful MacBook Pro with an M2 Max chip, perfect for creative professionals.",
+    "specification": [
+      "16.2-inch Liquid Retina XDR display",
+      "M2 Max chip",
+      "32GB or 64GB unified memory",
+      "Up to 8TB storage"
+    ],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": "P005",
+    "product_title": "Garmin Forerunner 265",
+    "product_image": "https://img.freepik.com/free-vector/fitness-trackers-concept_23-2148529803.jpg?t=st=1730981984~exp=1730985584~hmac=4a412996bd2a2a4915478b269d4184b90a7fc66abd772bf61f2f9407e177c3e9&w=740",
+    "category": "Wearables",
+    "price": 399,
+    "description": "Advanced GPS smartwatch designed for runners and athletes.",
+    "specification": [
+      "1.3-inch AMOLED display",
+      "Multi-GNSS support",
+      "Heart rate and SpO2 monitoring",
+      "Up to 15 days battery life in smartwatch mode"
+    ],
+    "availability": true,
+    "rating": 4.5
+  },
+  {
+    "product_id": "P006",
+    "product_title": "DJI Mini 3 Pro Drone",
+    "product_image": "https://img.freepik.com/premium-photo/drone-flying-green-field_93200-2639.jpg?w=740",
+    "category": "Drones",
+    "price": 759,
+    "description": "Compact and portable drone with professional-grade camera quality.",
+    "specification": [
+      "4K video at 60fps",
+      "3-axis gimbal",
+      "31-minute flight time",
+      "Obstacle sensing"
+    ],
+    "availability": false,
+    "rating": 4.4
+  },
+  {
+    "product_id": "P007",
+    "product_title": "Google Pixel 7 Pro",
+    "product_image": "https://img.freepik.com/free-photo/still-life-tech-device_23-2150722663.jpg?t=st=1730978763~exp=1730982363~hmac=65be3a9d435a3eb8d7528de72b11d5e7d31c432a2e54e6488f56a62b1aff0932&w=360",
+    "category": "Smartphones",
+    "price": 899,
+    "description": "Pixel 7 Pro with an amazing camera and Google's Tensor chip.",
+    "specification": [
+      "6.7-inch QHD+ display",
+      "Google Tensor G2",
+      "Triple-camera system",
+      "5,000mAh battery"
+    ],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": "P008",
+    "product_title": "Bose QuietComfort Earbuds II",
+    "product_image": "https://img.freepik.com/free-photo/headphones-audio-listen_1203-7566.jpg?t=st=1730981664~exp=1730985264~hmac=a7c256aac937243901ffb4ad060e03d28ad7fba973e688e47dd1ed685b1185ef&w=360",
+    "category": "Audio",
+    "price": 299,
+    "description": "Industry-leading noise-cancelling wireless earbuds from Bose.",
+    "specification": [
+      "Noise-cancelling",
+      "6 hours of battery life",
+      "IPX4 water resistance",
+      "Bluetooth 5.3"
+    ],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": "P009",
+    "product_title": "Dell XPS 13 Laptop",
+    "product_image": "https://img.freepik.com/free-photo/still-life-books-versus-technology_23-2150062920.jpg?t=st=1730978982~exp=1730982582~hmac=bfa818cda3f27af1bc9a3b3912517f2ff07c38f9964b3e3d69b3da9169cf43a0&w=740",
+    "category": "Laptops",
+    "price": 999,
+    "description": "The Dell XPS 13 is a compact and powerful ultrabook.",
+    "specification": [
+      "13.4-inch InfinityEdge display",
+      "Intel Core i7 13th Gen",
+      "16GB RAM, 512GB SSD",
+      "Intel Iris Xe Graphics"
+    ],
+    "availability": true,
+    "rating": 4.6
+  },
+  {
+    "product_id": "P010",
+    "product_title": "Fitbit Sense 2",
+    "product_image": "https://img.freepik.com/premium-photo/new-smart-fitness-bracelet-with-blank-black-screen_298425-724.jpg?w=740",
+    "category": "Wearables",
+    "price": 299,
+    "description": "Advanced health and fitness smartwatch from Fitbit.",
+    "specification": [
+      "EDA Sensor",
+      "6-day battery life",
+      "Heart rate and sleep monitoring",
+      "Built-in GPS"
+    ],
+    "availability": true,
+    "rating": 4.3
+  },
+  {
+    "product_id": "P011",
+    "product_title": "DJI Air 2S",
+    "product_image": "https://img.freepik.com/free-photo/white-drone-flying-parched-desert-area-against-blue-sky_181624-44677.jpg?t=st=1730982146~exp=1730985746~hmac=a1db3fb81275bd9a1f4abfa24b143256e721fc7e4828e27c53fc2f8615ef7397&w=740",
+    "category": "Drones",
+    "price": 999,
+    "description": "All-in-one aerial drone with a powerful camera.",
+    "specification": [
+      "20MP 1-inch sensor",
+      "5.4K video resolution",
+      "31 minutes flight time",
+      "Intelligent tracking"
+    ],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": "P012",
+    "product_title": "MacBook Air M2",
+    "product_image": "https://img.freepik.com/free-vector/laptop-with-solar-system-screen_1308-51945.jpg?t=st=1730979117~exp=1730982717~hmac=953e9abbe4773d04e9f3b74b4e5250dedd552c73448f8865739256d499d1fd1e&w=740",
+    "category": "Laptops",
+    "price": 1199,
+    "description": "Slim and powerful MacBook Air powered by Apple's M2 chip.",
+    "specification": [
+      "13.6-inch Liquid Retina display",
+      "M2 chip",
+      "8GB or 16GB RAM",
+      "Up to 2TB SSD storage"
+    ],
+    "availability": false,
+    "rating": 4.5
+  },
+  {
+    "product_id": "P013",
+    "product_title": "OnePlus 11",
+    "product_image": "https://img.freepik.com/premium-photo/all-screen-colorful-smartphone-isolated-3d-render_118047-1527.jpg?w=360",
+    "category": "Smartphones",
+    "price": 699,
+    "description": "Powerful smartphone from OnePlus with premium features.",
+    "specification": [
+      "6.7-inch Fluid AMOLED display",
+      "Snapdragon 8 Gen 2",
+      "50MP main camera",
+      "5,000mAh battery with 100W fast charging"
+    ],
+    "availability": true,
+    "rating": 4.5
+  },
+  {
+    "product_id": "P014",
+    "product_title": "AirPods Pro (2nd Generation)",
+    "product_image": "https://img.freepik.com/premium-vector/black-white-drawing-two-headphones-with-white-background_971593-3640.jpg?w=740",
+    "category": "Audio",
+    "price": 249,
+    "description": "The latest AirPods Pro with improved sound and noise cancellation.",
+    "specification": [
+      "Active Noise Cancellation",
+      "Personalized Spatial Audio",
+      "H2 chip",
+      "6 hours of battery life"
+    ],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": "P015",
+    "product_title": "Samsung Galaxy Book3 Ultra",
+    "product_image": "https://img.freepik.com/free-vector/video-conference-remote-working-flat-illustration-screen-laptop-with-group-colleagues-people-conn_88138-548.jpg?t=st=1730979079~exp=1730982679~hmac=8ddfce400777c0af58d5464c14e7452247a056d6784108e16289fdac08cb8c75&w=740",
+    "category": "Laptops",
+    "price": 1999,
+    "description": "Samsung's high-performance laptop with a focus on productivity.",
+    "specification": [
+      "16-inch AMOLED display",
+      "Intel Core i9 13th Gen",
+      "32GB RAM, 1TB SSD",
+      "NVIDIA GeForce RTX 4070"
+    ],
+    "availability": true,
+    "rating": 4.6
+  },
+  {
+    "product_id": "P016",
+    "product_title": "Apple Watch Ultra",
+    "product_image": "https://img.freepik.com/premium-vector/smartwatch-showing-time-footsteps_694196-1135.jpg?w=740",
+    "category": "Wearables",
+    "price": 799,
+    "description": "The most rugged, durable Apple Watch for extreme conditions.",
+    "specification": [
+      "49mm titanium case",
+      "Dual-frequency GPS",
+      "Water resistant to 100 meters",
+      "36-hour battery life"
+    ],
+    "availability": true,
+    "rating": 4.9
+  },
+  {
+    "product_id": "P017",
+    "product_title": "DJI FPV Drone",
+    "product_image": "https://img.freepik.com/free-photo/quadcopter-flying-nature_231208-10459.jpg?t=st=1730982143~exp=1730985743~hmac=e7fa14fe454b4704b07877a5dcdfcca13707977a5a81156169fe445d3943605d&w=740",
+    "category": "Drones",
+    "price": 1299,
+    "description": "DJI's first-person-view drone for immersive flying experiences.",
+    "specification": [
+      "4K video at 60fps",
+      "150° field of view",
+      "87 mph max speed",
+      "Live HD feed"
+    ],
+    "availability": true,
+    "rating": 4.5
+  },
+  {
+    "product_id": "P018",
+    "product_title": "iPhone SE (2023)",
+    "product_image": "https://img.freepik.com/free-photo/elegant-smartphone-composition_23-2149437106.jpg?t=st=1730978680~exp=1730982280~hmac=4536aa62c637f0e66537ecf8d816c345cf11b1904f63de163cd54220ad7c5d23&w=360",
+    "category": "Smartphones",
+    "price": 429,
+    "description": "Compact and affordable iPhone with powerful performance.",
+    "specification": [
+      "4.7-inch Retina HD display",
+      "A15 Bionic chip",
+      "12MP rear camera",
+      "Touch ID"
+    ],
+    "availability": true,
+    "rating": 4.4
+  },
+  {
+    "product_id": "P019",
+    "product_title": "Beats Fit Pro",
+    "product_image": "https://img.freepik.com/free-vector/headphone-gadget-cartoon-isolated_1308-153440.jpg?t=st=1730981643~exp=1730985243~hmac=0ecd02cd68d893c0c7c8b53e27c4be1a548a20487662610d4a9c946c7ef2a1bb&w=740",
+    "category": "Audio",
+    "price": 199,
+    "description": "True wireless earbuds with secure fit for workouts.",
+    "specification": [
+      "Active Noise Cancellation",
+      "IPX4 water resistance",
+      "Apple H1 chip",
+      "24-hour battery life with case"
+    ],
+    "availability": true,
+    "rating": 4.6
+  },
+  {
+    "product_id": "P020",
+    "product_title": "Acer Predator Helios 300",
+    "product_image": "https://img.freepik.com/premium-vector/education-online-infographic-with-laptop_24908-31914.jpg?w=740",
+    "category": "Laptops",
+    "price": 1499,
+    "description": "High-performance gaming laptop with RTX graphics.",
+    "specification": [
+      "15.6-inch FHD 144Hz display",
+      "Intel Core i7 12th Gen",
+      "16GB RAM, 512GB SSD",
+      "NVIDIA GeForce RTX 3060"
+    ],
+    "availability": true,
+    "rating": 4.3
+  },
+  {
+    "product_id": "P021",
+    "product_title": "Xiaomi Mi 13 Pro",
+    "product_image": "https://img.freepik.com/premium-photo/smartphone-balancing-with-pink-background_23-2150271746.jpg?w=740",
+    "category": "Smartphones",
+    "price": 899,
+    "description": "Xiaomi Mi 13 Pro with powerful performance and a high-resolution camera.",
+    "specification": [
+      "6.73-inch AMOLED display, 120Hz refresh rate",
+      "Snapdragon 8 Gen 2",
+      "50MP triple-camera system",
+      "4820mAh battery with 120W fast charging"
+    ],
+    "availability": true,
+    "rating": 4.5
+  }
+]
