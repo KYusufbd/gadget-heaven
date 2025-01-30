@@ -29,7 +29,7 @@ const Navbar = () => {
               />
             </svg>
           </div>
-          <ul className="menu dropdown-content menu-lg z-[1] mt-3 w-[92vw] absolute -left-4 rounded-box bg-bgcol p-2 font-medium shadow">
+          <ul className="menu dropdown-content menu-lg absolute -left-4 z-[1] mt-3 w-[92vw] rounded-box bg-bgcol p-2 font-medium shadow">
             <li>
               <NavLink to="/">Home</NavLink>
             </li>
