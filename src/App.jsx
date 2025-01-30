@@ -15,10 +15,10 @@ function App() {
       .then((data) => setGadgets(data));
   }, []);
 
-  const [cart, setCart] = useState(["P003", "P007"]);
-  const [wishlist, setWishlist] = useState(["P002", "P009"]);
+  const [cart, setCart] = useState([]);
+  const [wishlist, setWishlist] = useState([]);
   const [totalCost, setTotalCost] = useState(0);
-  const maximumPrice = 2500;
+  const priceLimit = 2500;
 
   // Function for formatting numbers:
   const formatNumber = (number) => {
@@ -33,7 +33,7 @@ function App() {
   // Add to cart function:
   function addToCart(itemId, price, remove) {
     if (!cart.includes(itemId)) {
-      if (price + totalCost <= maximumPrice) {
+      if (price + totalCost <= priceLimit) {
         setCart([...cart, itemId]);
         toast("Successfully added to Cart!");
         if (remove) {
