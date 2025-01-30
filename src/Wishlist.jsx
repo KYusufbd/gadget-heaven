@@ -6,26 +6,8 @@ import { Helmet } from "react-helmet-async";
 
 const Wishlist = () => {
   const items = useContext(GadgetContext);
-  const { cart, setCart, wishlist, setWishlist, formatNumber } =
+  const { addToCart, wishlist, removeFromWishlist, formatNumber } =
     useContext(DashboardContext);
-
-  // Add to cart function:
-  function addToCart(itemId) {
-    if (!cart.includes(itemId)) {
-      setCart([...cart, itemId]);
-    }
-  }
-
-  // Function for removing items from wishlist
-  const removeFromWishlist = (item) => {
-    setWishlist((prevCart) => prevCart.filter((id) => id !== item));
-  };
-
-  // Fuction for adding to cart and removing from wishlist:
-  const sendToCart = (item) => {
-    addToCart(item);
-    removeFromWishlist(item);
-  };
 
   return (
     <div className="flex w-full flex-col gap-8 bg-bgcol px-4 pb-16 pt-12">
@@ -59,7 +41,9 @@ const Wishlist = () => {
                   Price: {formatNumber(gadget?.price)}
                 </p>
                 <button
-                  onClick={() => sendToCart(gadget.product_id)}
+                  onClick={() =>
+                    addToCart(gadget.product_id, gadget.price, true)
+                  }
                   className={`btn w-max rounded-full bg-primary px-5 py-3 text-lg font-bold text-white hover:bg-primary hover:opacity-70 ${+!gadget?.availability && "btn-disabled"}`}
                 >
                   Add To Cart

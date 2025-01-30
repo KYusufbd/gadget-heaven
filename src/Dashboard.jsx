@@ -1,11 +1,16 @@
 import { useEffect } from "react";
+import { useLocation } from "react-router";
 import { NavLink, Outlet, useNavigate } from "react-router";
 
 const Dashboard = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
-    navigate("/dashboard/cart");
+    const p = location.pathname;
+    if (p === "/dashboard") {
+      navigate("/dashboard/cart");
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (

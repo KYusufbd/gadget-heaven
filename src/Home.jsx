@@ -10,7 +10,9 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>{category ? `${category} | Gadget Heaven` : "Gadget Heaven"}</title>
+        <title>
+          {category ? `${category} | Gadget Heaven` : "Gadget Heaven"}
+        </title>
       </Helmet>
       <header className="w-full bg-bgcol">
         <Banner />

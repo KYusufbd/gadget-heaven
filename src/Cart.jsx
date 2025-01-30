@@ -8,8 +8,8 @@ import { Helmet } from "react-helmet-async";
 
 const Cart = () => {
   const items = useContext(GadgetContext);
-  const { cart, setCart, formatNumber } = useContext(DashboardContext);
-  const [totalCost, setTotalCost] = useState(0);
+  const { cart, setCart, totalCost, setTotalCost, formatNumber } =
+    useContext(DashboardContext);
   const [totalInModal, setTotalInModal] = useState(0);
 
   // This codes shows total cost of items of cart
@@ -26,7 +26,7 @@ const Cart = () => {
     }
 
     setTotalCost(cost);
-  }, [cart, items]);
+  }, [cart, items, setTotalCost]);
 
   // Function for removing items from cart
   const removeFromCart = (item) => {
@@ -137,9 +137,12 @@ const Cart = () => {
               Total: {formatNumber(totalInModal)}
             </p>
             <form method="dialog" className="w-full">
-                <button onClick={() => navigate('/')} className="btn btn-ghost btn-active w-full rounded-full">
-                  Close
-                </button>
+              <button
+                onClick={() => navigate("/")}
+                className="btn btn-ghost btn-active w-full rounded-full"
+              >
+                Close
+              </button>
             </form>
           </div>
         </div>

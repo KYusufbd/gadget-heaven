@@ -8,31 +8,20 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import { Helmet } from "react-helmet-async";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 const Details = () => {
   const [gadget, setGadget] = useState();
   const gadgets = useContext(GadgetContext);
-  const { cart, setCart, wishlist, setWishlist, formatNumber } =
+  const { cart, addToCart, wishlist, setWishlist, formatNumber } =
     useContext(DashboardContext);
   const p = useParams();
-
-  // Add to cart function:
-  function addToCart(itemId) {
-    if (!cart.includes(itemId)) {
-      setCart([...cart, itemId]);
-      toast('Successfully added to Cart!')
-    }
-    else {
-      toast('This item is already in the cart!')
-    }
-  }
 
   // Add to wishlist function:
   function addToWishlist(itemId) {
     if (!wishlist.includes(itemId)) {
       setWishlist([...wishlist, itemId]);
-      toast('Successfully added to wishlist!')
+      toast("Successfully added to wishlist!");
     }
   }
 
@@ -108,7 +97,7 @@ const Details = () => {
               </div>
               <div className="flex flex-row gap-2 md:gap-4">
                 <button
-                  onClick={() => addToCart(gadget.product_id)}
+                  onClick={() => addToCart(gadget.product_id, gadget.price)}
                   className={`btn w-max rounded-full bg-primary px-5 py-3 text-lg font-bold text-white hover:bg-primary hover:opacity-70 ${!gadget?.availability && "btn-disabled"}`}
                 >
                   {!cart.includes(gadget?.product_id)
@@ -127,9 +116,6 @@ const Details = () => {
           </div>
         </div>
       </div>
-      <ToastContainer
-        position="top-center"
-      />
     </div>
   );
 };
@@ -138,12 +124,12 @@ export default Details;
 
 console.log(`
   You have to perform these tasks before submitting:
-  * Set maximum price of the cart
-  * Show error toast when trying to add items from wishlist to the cart if the limit is crossed.
   * Provide documentation in Readme file
   * Remove the these lines and the lines below
   
   Performed tasks:
+  * Show error toast when trying to add items from wishlist to the cart if the limit is crossed.
+  * Set maximum price of the cart
   * Show toast on adding to cart or wishlist with different messages.
   * Use dynamic title for each page.
   * use favicon

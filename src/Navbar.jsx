@@ -8,7 +8,9 @@ const Navbar = () => {
   const path = location.pathname;
 
   return (
-    <nav className={`max-w-page-width navbar mx-auto mt-6 ${path === '/' ? "-mb-28 text-white" : "mb-6"} px-4 w-11/12 items-center z-10`}>
+    <nav
+      className={`navbar mx-auto mt-6 max-w-page-width ${path === "/" ? "-mb-28 text-white" : "mb-6"} z-10 w-11/12 items-center px-4`}
+    >
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -74,10 +76,10 @@ const Navbar = () => {
       </div>
       <div className="navbar-end flex gap-4 text-txtcol">
         <Link to={"/dashboard/cart"}>
-          <BsCart3 className="btn btn-ghost rounded-full p-2 text-5xl outline outline-2 outline-gray-100 bg-white" />
+          <BsCart3 className="btn btn-ghost rounded-full bg-white p-2 text-5xl outline outline-2 outline-gray-100" />
         </Link>
         <Link to={"/dashboard/wishlist"}>
-          <MdFavoriteBorder className="btn btn-ghost rounded-full p-2 text-5xl outline outline-2 outline-gray-100 bg-white" />
+          <MdFavoriteBorder className="btn btn-ghost rounded-full bg-white p-2 text-5xl outline outline-2 outline-gray-100" />
         </Link>
       </div>
     </nav>
