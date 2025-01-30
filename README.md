@@ -22,15 +22,14 @@ This project is developed using **React** along with several UI libraries and to
 - **State (`useState`)** – Manages component-specific data that affects rendering.
 - **Lifecycle Methods (`useEffect`)** – Special methods/hooks that run at different stages of a component's life.
 - **React Router** – Enables client-side navigation without page reloads.
-- **Event Handling** – Managing user interactions like clicks, inputs, and form submissions.
+- **Event Handling** – Managing user interactions like clicks.
 - **Conditional Rendering** – Rendering elements based on certain conditions.
 - **List Rendering (`map`)** – Efficiently rendering multiple elements from an array.
 - **Keys in Lists** – Unique identifiers for list items to improve performance.
 - **URL Parameters (`useParams`)** – Extracting dynamic values from URLs.
-- **`useParams`** – Hook to access route parameters.
 - **`useNavigate`** – Hook for programmatic navigation.
 - **`useLocation`** – Hook to access the current URL location.
-- **Dynamic Page Title (`useEffect`)** – Changing the document title based on the current page.
+- **Dynamic Page Title (`with react-helmet-async`)** – Changing the document title based on the current page.
 
 ### 📌 State Management
 
@@ -48,16 +47,18 @@ This project is developed using **React** along with several UI libraries and to
 - **React Toastify** – For toast notifications
 - **Recharts** – For beautiful data visualizations
 
-## 📂 Features
+📂 Features
 
-✅ Modern & responsive UI with Tailwind & DaisyUI  
-✅ Interactive product listings with star ratings  
-✅ Category-based product filtering  
-✅ URL-based dynamic routing using `useParams`  
-✅ Toast notifications for user interactions  
-✅ Dynamic page titles for better SEO  
-✅ Data visualization using **Recharts**  
-✅ Smooth navigation with **React Router**
+✅ Modern & responsive UI with Tailwind & DaisyUI
+✅ Interactive product listings with star ratings
+✅ Category-based product filtering
+✅ URL-based dynamic routing using useParams
+✅ Toast notifications for user interactions
+✅ Dynamic page titles for better SEO
+✅ Data visualization using Recharts
+✅ Smooth navigation with React Router
+✅ Detailed product pages with reviews and specifications
+✅ Wishlist functionality to save favorite products
 
 ## 📥 Installation & Setup
 
