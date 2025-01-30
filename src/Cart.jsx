@@ -4,7 +4,7 @@ import GadgetContext from "./GadgetContext";
 import CloseIcon from "@mui/icons-material/Close";
 import TuneIcon from "@mui/icons-material/Tune";
 import { useNavigate } from "react-router";
-import { useParams } from "react-router";
+import { Helmet } from "react-helmet-async";
 
 const Cart = () => {
   const items = useContext(GadgetContext);
@@ -61,12 +61,11 @@ const Cart = () => {
   // Navigate function
   const navigate = useNavigate();
 
-  // Testing purpose only:
-  const p = useParams();
-  console.log(p);
-
   return (
     <div className="flex w-full flex-col gap-8 bg-bgcol px-4 pb-16 pt-12">
+      <Helmet>
+        <title>Cart | Gadget Heaven</title>
+      </Helmet>
       <div className="mx-auto flex w-full max-w-page-width flex-row flex-wrap items-center justify-between">
         <h5 className="text-2xl font-bold">Cart</h5>
         <div className="flex flex-row flex-wrap items-center gap-6">

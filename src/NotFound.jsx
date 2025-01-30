@@ -1,8 +1,12 @@
+import { Helmet } from "react-helmet-async";
 import { HashLink as Link } from "react-router-hash-link";
 
 const NotFound = () => {
   return (
     <div className="min-h-full w-full bg-bgcol">
+      <Helmet>
+        <title>404 - Error</title>
+      </Helmet>
       <div className="flex flex-col gap-6 bg-primary px-5 py-12 text-center text-white">
         <div className="flex flex-col gap-4">
           <h1 className="text-3xl font-bold">

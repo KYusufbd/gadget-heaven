@@ -2,6 +2,7 @@ import { useContext } from "react";
 import GadgetContext from "./GadgetContext";
 import { DashboardContext } from "./DashboardContext";
 import CloseIcon from "@mui/icons-material/Close";
+import { Helmet } from "react-helmet-async";
 
 const Wishlist = () => {
   const items = useContext(GadgetContext);
@@ -28,6 +29,9 @@ const Wishlist = () => {
 
   return (
     <div className="flex w-full flex-col gap-8 bg-bgcol px-4 pb-16 pt-12">
+      <Helmet>
+        <title>Wishlist | Gadget Heaven</title>
+      </Helmet>
       <div className="mx-auto flex w-full max-w-page-width flex-row justify-between">
         <h5 className="text-2xl font-bold">Wishlist</h5>
       </div>

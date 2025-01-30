@@ -12,12 +12,16 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import GadgetContext from "./GadgetContext";
+import { Helmet } from "react-helmet-async";
 
 const Statistics = () => {
   const gadgets = useContext(GadgetContext);
 
   return (
     <div>
+      <Helmet>
+        <title>Statistics | Gadget Heaven</title>
+      </Helmet>
       <div className="flex flex-col gap-8 bg-primary px-5 py-8 text-center text-white">
         <div className="flex flex-col gap-4">
           <h1 className="text-3xl font-bold">Statistics</h1>

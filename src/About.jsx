@@ -1,8 +1,12 @@
 import CheckIcon from "@mui/icons-material/Check";
+import { Helmet } from "react-helmet-async";
 
 const About = () => {
   return (
     <div className="w-full bg-bgcol">
+      <Helmet>
+        <title>About | Gadget Heaven</title>
+      </Helmet>
       <div className="flex flex-col gap-6 bg-primary px-5 py-12 text-center text-white">
         <div className="flex flex-col gap-4">
           <h1 className="text-3xl font-bold">About Gadget Heaven</h1>
