@@ -12,7 +12,7 @@ const Navbar = () => {
       className={`navbar mx-auto mt-6 max-w-page-width ${path === "/" ? "-mb-28 text-white" : "mb-6"} z-10 w-11/12 items-center px-4`}
     >
       <div className="navbar-start">
-        <div className="dropdown">
+        <div className="dropdown text-txtcol">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +29,7 @@ const Navbar = () => {
               />
             </svg>
           </div>
-          <ul className="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 font-medium shadow">
+          <ul className="menu dropdown-content menu-lg z-[1] mt-3 w-[92vw] absolute -left-4 rounded-box bg-bgcol p-2 font-medium shadow">
             <li>
               <NavLink to="/">Home</NavLink>
             </li>
